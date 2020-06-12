@@ -1,5 +1,5 @@
 const files = require.context('.', false, /\.vue$/)
-const list: Array<any> = []
+const list: Array<{}> = []
 
 files.keys().forEach((key) => {
   if (key === './tutorials.js') return
