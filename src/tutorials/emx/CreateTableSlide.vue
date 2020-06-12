@@ -58,7 +58,8 @@
 </template>
 
 <script>
-import MolgenisTable from '../../components/MolgenisTable'
+import MolgenisTable from '@/components/MolgenisTable'
+
 export default {
   name: 'create-table-slide',
   components: { MolgenisTable },

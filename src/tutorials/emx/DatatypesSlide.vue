@@ -121,7 +121,8 @@
 </template>
 
 <script>
-import MolgenisTable from '../../components/MolgenisTable'
+import MolgenisTable from '@/components/MolgenisTable'
+
 export default {
   name: 'datatypes-slide',
   components: { MolgenisTable },

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { isAbove, isBelow, isBetween } from '../helpers/range'
+import { isAbove, isBelow, isBetween } from '@/helpers/range'
 
 export default {
   name: 'molgenis-table',

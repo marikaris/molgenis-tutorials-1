@@ -14,10 +14,10 @@
 </template>
 <script>
 import { Slideshow } from 'eagle.js'
-import MolgenisSlide from '../components/MolgenisSlide'
-import MolgenisTable from '../components/MolgenisTable'
-import config from '../tutorials/import/config.json'
-import slides from '../tutorials/import'
+import MolgenisSlide from '@/components/MolgenisSlide'
+import MolgenisTable from '@/components/MolgenisTable'
+import config from '@/tutorials/import/config.json'
+import slides from '@/tutorials/import'
 
 export default {
   name: 'import-tutorial',

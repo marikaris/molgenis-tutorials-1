@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import tutorials from '../slideshows/tutorials.ts'
+import tutorials from '@/slideshows/tutorials.ts'
 
 import GithubButton from 'vue-github-button'
 
