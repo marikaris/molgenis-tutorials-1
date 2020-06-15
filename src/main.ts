@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import App from '@/App.vue'
 import router from '@/router'
 
-// @ts-ignore
 import Eagle from 'eagle.js'
+import { MolgenisSlideShow } from '@/types/types'
 import 'animate.css'
 
 import tutorials from '@/slideshows/tutorials.ts'
@@ -23,9 +23,11 @@ Vue.use(Eagle)
 Vue.use(Router)
 Vue.config.productionTip = false
 
+console.log(Eagle)
+
 const routes = []
 
-tutorials.list.forEach(function (tutorial: any) {
+tutorials.list.forEach(function (tutorial: MolgenisSlideShow) {
   routes.push({
     path: '/' + tutorial.infos.path,
     component: tutorial
