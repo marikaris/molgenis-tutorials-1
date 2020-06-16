@@ -23,8 +23,6 @@ Vue.use(Eagle)
 Vue.use(Router)
 Vue.config.productionTip = false
 
-console.log(Eagle)
-
 const routes = []
 
 tutorials.list.forEach(function (tutorial: MolgenisSlideShow) {

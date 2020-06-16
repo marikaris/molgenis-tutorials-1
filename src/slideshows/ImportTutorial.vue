@@ -15,18 +15,18 @@
 <script>
 import { Slideshow } from 'eagle.js'
 import MolgenisSlide from '@/components/MolgenisSlide'
-import MolgenisTable from '@/components/MolgenisTable'
 import config from '@/tutorials/import/config.json'
 import slides from '@/tutorials/import'
 
 export default {
   name: 'import-tutorial',
-  components: { MolgenisSlide, MolgenisTable, ...slides },
+  components: { MolgenisSlide, ...slides },
   mixins: [Slideshow],
   infos: {
     // These infos appear on the home page, below the slideshow's thumbnail
     title: 'Import table',
     description: 'How to import your table in MOLGENIS',
+    // Path in the URL, NO SPACES
     path: 'import'
   },
   data () {

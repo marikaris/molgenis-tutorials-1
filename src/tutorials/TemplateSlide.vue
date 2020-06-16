@@ -1,6 +1,7 @@
 <template>
   <!--  Don't forget to register your component in the config.json
-  (specify name in kebab-case, title and when multiple steps, the number of steps) -->
+  (specify name in kebab-case, title and when multiple steps, the number of steps)-->
+  <!-- Leave this first div -->
   <div>
     <!-- Remove the step divs if you have one step-->
     <div v-if="step === 1">
@@ -19,15 +20,17 @@
         </div>
       </div>
     </div>
+    <!-- Leave this last div!-->
   </div>
 </template>
 
 <script>
 // Import the table component if you want to use it
-import MolgenisTable from '../../components/MolgenisTable'
+import MolgenisTable from '@/components/MolgenisTable'
+
 export default {
   // Here you fill in the name of your slide (use CamelCase like in this example)
-  name: 'NameOfSlide',
+  name: 'name-of-slide',
   // Register the table component if you use it in your slide
   components: { MolgenisTable },
   // Just leave this there. Required if you have multiple steps in your slide, but it does't do harm if you don't.
