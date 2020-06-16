@@ -51,13 +51,13 @@ export default {
       return !this.needsMinPadding && (this.headerLength === 10 || isBetween(this.dataLength, 7, 14))
     },
     needsMidFont () {
-      return !(this.needsSmallFont || this.needsXsFont) && (isBetween(this.headerLength, 7, 12) || isBetween(this.dataLength, 10, 18) || isBelow(this.windowWidth, 845))
+      return !(this.needsSmallFont || this.needsXsFont) && (isBetween(this.headerLength, 7, 12) || isBetween(this.dataLength, 10, 14) || isBelow(this.windowWidth, 845))
     },
     needsMinPadding () {
       return isAbove(this.headerLength, 10) || isAbove(this.dataLength, 12) || isBelow(this.windowWidth, 800)
     },
     needsSmallFont () {
-      return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 17) || isBelow(this.windowWidth, 575))
+      return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.windowWidth, 575))
     },
     needsXsFont () {
       return isAbove(this.headerLength, 13) || isAbove(this.dataLength, 22) || (isAbove(this.headerLength, 10) && isBelow(this.windowWidth, 825))
@@ -94,7 +94,7 @@ export default {
   }
 
   .mg-small-font {
-    font-size: 40%;
+    font-size: 42%;
   }
 
   .mg-small-font > caption {
