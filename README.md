@@ -174,26 +174,26 @@ elements or apply certain styling when the screen gets smaller. To do this, you 
 your window. You need to add a few elements to be able to do that. A simple example can be found in 
 ```/src/tutorials/import/ImporterSlide.vue```. 
 Add this part of code below the last parameter in the ```script``` section (before the last ```}```):
-```ecmascript 6
-  data () {
-    return {
-      windowWidth: 0
-    }
-  },
-  methods: {
-    onResize () {
-      this.windowWidth = window.innerWidth
-    }
-  },
-  mounted () {
-    this.$nextTick(() => {
-      this.windowWidth = window.innerWidth
-      window.addEventListener('resize', this.onResize)
-    })
-  },
-  beforeDestroy () {
-    window.removeEventListener('resize', this.onResize)
+```javascript
+data () {
+  return {
+    windowWidth: 0
   }
+ },
+methods: {
+  onResize () {
+    this.windowWidth = window.innerWidth
+  }
+ },
+mounted () {
+  this.$nextTick(() => {
+    this.windowWidth = window.innerWidth
+     window.addEventListener('resize', this.onResize)
+  })
+},
+ beforeDestroy () {
+  window.removeEventListener('resize', this.onResize)
+}
 ```
 Now you are able to reach the windowwidth in ```this.windowWidth```. In this case it is used to determine which image to
 show for the MOLGENIS menu in step 1:
@@ -205,10 +205,10 @@ show for the MOLGENIS menu in step 1:
 For a complex example you can take a look at ```/src/components/MolgenisTable```. The size of the font and the padding 
 in tables is dependent on the width of the screen and the size of the data. You can find it back in the ```computed``` 
 parameter of the ```script``` section. For instance:
-```ecmascript 6
+```javascript
 needsSmallFont () {
-      return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.windowWidth, 575))
-    }
+  return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.windowWidth, 575))
+}
 ```
 The table will get a small font when the window width is below 575 pixels.
 
