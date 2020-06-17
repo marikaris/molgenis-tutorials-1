@@ -19,7 +19,10 @@ purposes. Replace anything between the first ```<div>```  last ```</div``` with 
 ### Step 3
 Copy the ```/src/tutorials/config-template.json``` to your folder and name it ```config.json```. 
 
-### Step 4
+### Step 4 
+Copy the ```/src/tutorials/emx/index.js``` to your folder.
+
+### Step 5
 Add your slide to the config. Open the ```config.json``` you just pasted in your folder. Add an object to the 
 ```slides``` list. For instance:
 ```json
@@ -39,7 +42,7 @@ be white. The default is ```false``` and therefore the ```isFirst``` can be left
 For each slide you also need to specify the number of steps it has. The default is one and if you just have one step in 
 your slide, you can leave the ```step``` parameter out for your slide.
 
-### Step 5
+### Step 6
 Create a new Slideshow file in the ```/src/slideshows``` folder. The easiest way to do this correctly, is by duplicating 
 one of the existing slideshows and rename it. A few things need to be replaced:
 * The ```id``` of the div should be renamed to ```mg-*short name for your tutorial*``` (e.g. ```mg-emx``` and 
@@ -48,6 +51,9 @@ one of the existing slideshows and rename it. A few things need to be replaced:
 * The ```name``` in the ```script``` section should be replaced. It should end with ```-tutorial``` and is written in 
 kebab-case.
 * The ```infos``` in the ```script``` section should be updated (i.e. title, description, and path)
+
+### Step 7
+Open ```/src/router/index.ts``` and add the route to your tutorial.
 
 ## Add new slide
 The slides itself are as basic as possible. The only thing you need to worry about is writing correct HTML in the 
