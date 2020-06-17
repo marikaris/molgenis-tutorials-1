@@ -15,8 +15,8 @@
 <script>
 import { Slideshow } from 'eagle.js'
 import MolgenisSlide from '@/components/MolgenisSlide'
-import config from '@/tutorials/emx/config.json'
-import slides from '@/tutorials/emx'
+import config from '@/tutorials/faq/config.json'
+import slides from '@/tutorials/faq'
 
 export default {
   name: 'faq-tutorial',
