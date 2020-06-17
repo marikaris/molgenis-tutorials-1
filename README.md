@@ -11,7 +11,7 @@ in order to add a tutorial slideshow.
 Create a folder for the slides in ```/src/tutorials/*your short tutorial name*``` (e.g. ```emx``` or ```import```). 
 
 ### Step 2
-Copy the TemplateSlide.vue in ```src/tutorials``` to your folder and give it an appropriate name. Update the name in the
+Copy the TemplateSlide.vue in ```/src/tutorials``` to your folder and give it an appropriate name. Update the name in the
 ```script``` section of the file as well. Use kebab-case and let it end with ```-slide``` for naming convention 
 purposes. Replace anything between the first ```<div>```  last ```</div``` with the content of your slide 
 (see ```Add new slide section``` for more extensive explanation). 
@@ -43,7 +43,7 @@ your slide, you can leave the ```step``` parameter out for your slide.
 Create a new Slideshow file in the ```/src/slideshows``` folder. The easiest way to do this correctly, is by duplicating 
 one of the existing slideshows and rename it. A few things need to be replaced:
 * The ```id``` of the div should be renamed to ```mg-*short name for your tutorial*``` (e.g. ```mg-emx``` and 
-```mg-import```)
+```mg-import```) and rename the ```ref``` as well. 
 * The ```imports``` on top in the ```script``` section should point to the folder you created for your tutorial.
 * The ```name``` in the ```script``` section should be replaced. It should end with ```-tutorial``` and is written in 
 kebab-case.
