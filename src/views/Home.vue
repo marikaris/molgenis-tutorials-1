@@ -17,20 +17,29 @@
           <github-button href="https://github.com/molgenis/molgenis" data-size="large" data-show-count="true" aria-label="Star molgenis/molgenis on GitHub">Star</github-button>
           <h2>Tutorials</h2>
           <p> On this page we walk you through the most essential features of MOLGENIS. Click on the tutorial to start it. </p>
-          <div class="thumbnails">
-            <div class="box-card" v-for="(tutorial, index) in tutorials" :key="index">
-              <router-link :to="tutorial.infos.path" @click.native="click">
-                <div class="embedded-slideshow-container">
-                  <component :is="tutorial" :embedded=true :keyboardNavigation="false"
-                             :mouseNavigation="false"></component>
+          <div class="row">
+            <div class="col-md-10">
+              <div class="thumbnails">
+                <h3>Tutorial</h3>
+                <div class="box-card" v-for="(tutorial, index) in tutorials" :key="index">
+                  <router-link :to="tutorial.infos.path" @click.native="click">
+                    <div class="embedded-slideshow-container">
+                      <component :is="tutorial" :embedded=true :keyboardNavigation="false"
+                                 :mouseNavigation="false"></component>
+                    </div>
+                  </router-link>
+                  <div class="mg-caption">
+                    <h3>{{tutorial.infos.title}}</h3>
+                    <p class="thumbnail-description">
+                      {{tutorial.infos.description}}
+                    </p>
+                  </div>
                 </div>
-              </router-link>
-              <div class="mg-caption">
-                <h3>{{tutorial.infos.title}}</h3>
-                <p class="thumbnail-description">
-                  {{tutorial.infos.description}}
-                </p>
               </div>
+            </div>
+            <div class="col-md-2">
+              <h3>Resources</h3>
+              <a :href="`${publicPath}data/demo.xlsx`" download>Demo data</a>
             </div>
           </div>
         </div>
@@ -51,14 +60,15 @@ export default {
   },
   data: function () {
     return {
-      tutorials: tutorials.list
+      tutorials: tutorials.list,
+      publicPath: process.env.BASE_URL
     }
   },
   mounted: function () {
     document.currentSlide = {}
   },
   methods: {
-    click: function (evt) {
+    click (evt) {
       evt.stopPropagation()
     }
   }
