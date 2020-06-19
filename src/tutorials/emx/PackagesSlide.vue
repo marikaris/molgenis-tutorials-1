@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>A packages sheet in excel looks like this:</p>
-    <img class="mg-pckgs-xcel" src="../../assets/packages_excel.png" alt="packages"/>
+    <img class="mg-pckgs-xcel" src="@/assets/packages_excel.png" alt="packages"/>
     <p>In CSV this would be:</p>
     <pre>"name","label","description"
 "study","study","Pharmacogenetics of NSAIDs"</pre>

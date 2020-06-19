@@ -2,7 +2,7 @@
   <div>
     <div v-if="step === 1">
       <p>An entities sheet in excel looks like this:</p>
-      <img class="mg-entities" src="../../assets/entities_excel.png" alt="entities"/>
+      <img class="mg-entities" src="@/assets/entities_excel.png" alt="entities"/>
       <p>In CSV this would be:</p>
       <pre>"name","label","package","description"
 "Subjects","Subjects","study",""
@@ -14,7 +14,7 @@
     </div>
     <div v-if="step === 2">
       <p>In the MOLGENIS navigator the result will look like:</p>
-      <img class="mg-entities-nav" src="../../assets/entities_navigator.png" alt="entities"/>
+      <img class="mg-entities-nav" src="@/assets/entities_navigator.png" alt="entities"/>
     </div>
   </div>
 </template>

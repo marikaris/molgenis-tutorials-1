@@ -87,7 +87,7 @@ below.
 You might want to add an image to your slide. If you want to do so, place the image in the ```src/assets``` folder of 
 this project. After that you can retrieve the image using the HTML image tag:
 ```html
-<img src="../../assets/myImg.png" alt="My image" class="mg-my-img"/>
+<img src="@/assets/myImg.png" alt="My image" class="mg-my-img"/>
 ```
 Additional styling of the image (e.g. size) can be applied in the ```style``` section using CSS. For more information 
 see ```Additional styling``` below.
@@ -133,9 +133,9 @@ A complete example of the usage can be found in ```/src/tutorials/TemplateSlide.
 Sometimes basic bootstrap styling is not enough, you need to resize or recolor an element. You can 
 do this using CSS. Simply add a ```class``` to the element you want to style. For instance:
 ```html
-<img src="../../assets/myImg1.png" alt="My image" class="mg-my-img"/>
-<img src="../../assets/myImg2.png" alt="My image" class="mg-my-img"/>
-<img src="../../assets/myImg3.png" alt="My image" class="mg-my-other-img"/>
+<img src="@/assets/myImg1.png" alt="My image" class="mg-my-img"/>
+<img src="@/assets/myImg2.png" alt="My image" class="mg-my-img"/>
+<img src="@/assets/myImg3.png" alt="My image" class="mg-my-other-img"/>
 ```
 Then on on the bottom of your file in the ```style``` section, you can add CSS styling. For instance:
 ```css
@@ -198,8 +198,8 @@ mounted () {
 Now you are able to reach the windowwidth in ```this.windowWidth```. In this case it is used to determine which image to
 show for the MOLGENIS menu in step 1:
 ```vue
-<img v-if="this.windowWidth > 989" class="mg-menu" src="../../assets/importer_menu.png" alt="menu"/>
-<img v-if="this.windowWidth < 990" class="mg-menu-sm" src="../../assets/importer_menu_small.png" alt="menu"/>
+<img v-if="this.windowWidth > 989" class="mg-menu" src="@/assets/importer_menu.png" alt="menu"/>
+<img v-if="this.windowWidth < 990" class="mg-menu-sm" src="@/assets/importer_menu_small.png" alt="menu"/>
 ```
 
 For a complex example you can take a look at ```/src/components/MolgenisTable```. The size of the font and the padding 

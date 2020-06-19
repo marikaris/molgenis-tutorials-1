@@ -78,16 +78,12 @@ export default {
     document.currentSlide = {}
   },
   methods: {
-    // click (evt) {
-    //   evt.stopPropagation()
-    // }
+    click (evt) {
+      evt.stopPropagation()
+    }
   }
 }
 </script>
-<style>
-
-</style>
-
 <style lang='scss' scoped>
   .mg-tutorials-header {
     margin-top: 0;

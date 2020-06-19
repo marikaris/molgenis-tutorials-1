@@ -2,7 +2,7 @@
   <div>
     <div v-if="step === 1">
       <p>An EMX file can be saved either as Excel file, or as a zip of tab or comma separated files (TSV/CSV).</p>
-      <img class="mg-excel" src="../../assets/excel.png" alt="excel"/>
+      <img class="mg-excel" src="@/assets/excel.png" alt="excel"/>
     </div>
     <div v-if="step === 2">
       <div class="row">
