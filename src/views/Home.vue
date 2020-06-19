@@ -14,23 +14,44 @@
       </div>
       <div class="row">
         <div class="col-12 banner">
-          <github-button href="https://github.com/molgenis/molgenis" data-size="large" data-show-count="true" aria-label="Star molgenis/molgenis on GitHub">Star</github-button>
-          <h2>Tutorials</h2>
-          <p> On this page we walk you through the most essential features of MOLGENIS. Click on the tutorial to start it. </p>
-          <div class="thumbnails">
-            <div class="box-card" v-for="(tutorial, index) in tutorials" :key="index">
-              <router-link :to="tutorial.infos.path" @click.native="click">
-                <div class="embedded-slideshow-container">
-                  <component :is="tutorial" :embedded=true :keyboardNavigation="false"
-                             :mouseNavigation="false"></component>
+          <div class="row">
+            <div class="col-md-10 col-sm-9 col-xs-8">
+              <h2 class="mg-tutorials-header">MOLGENIS Tutorials</h2>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4">
+              <github-button href="https://github.com/molgenis/molgenis" data-size="large" data-show-count="true"
+                             aria-label="Star molgenis/molgenis on GitHub">Star</github-button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p> On this page we walk you through the most essential features of MOLGENIS. Click on the tutorial to
+                start it. Use the left and right arrow keys on your keyboard to go through the tutorials.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10">
+              <div class="thumbnails">
+                <h3>Tutorials</h3>
+                <div class="box-card" v-for="(tutorial, index) in tutorials" :key="index">
+                  <router-link :to="tutorial.infos.path" @click.native="click">
+                    <div class="embedded-slideshow-container">
+                      <component :is="tutorial" :embedded=true :keyboardNavigation="false"
+                                 :mouseNavigation="false"></component>
+                    </div>
+                  </router-link>
+                  <div class="mg-caption">
+                    <h3>{{tutorial.infos.title}}</h3>
+                    <p class="thumbnail-description">
+                      {{tutorial.infos.description}}
+                    </p>
+                  </div>
                 </div>
-              </router-link>
-              <div class="mg-caption">
-                <h3>{{tutorial.infos.title}}</h3>
-                <p class="thumbnail-description">
-                  {{tutorial.infos.description}}
-                </p>
               </div>
+            </div>
+            <div class="col-md-2">
+              <h3>Resources</h3>
+              <a :href="`${publicPath}data/demo.xlsx`" download><font-awesome-icon icon="download" /> Demo EMX</a>
             </div>
           </div>
         </div>
@@ -51,24 +72,24 @@ export default {
   },
   data: function () {
     return {
-      tutorials: tutorials.list
+      tutorials: tutorials.list,
+      publicPath: process.env.BASE_URL
     }
   },
   mounted: function () {
     document.currentSlide = {}
   },
   methods: {
-    click: function (evt) {
+    click (evt) {
       evt.stopPropagation()
     }
   }
 }
 </script>
-<style>
-
-</style>
-
 <style lang='scss' scoped>
+  .mg-tutorials-header {
+    margin-top: 0;
+  }
   .banner {
     padding-left: 12%;
     padding-right: 12%;
