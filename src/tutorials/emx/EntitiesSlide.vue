@@ -28,11 +28,13 @@ export default {
 
 <style scoped>
   img.mg-entities {
-    width: 30%;
+    width: 70%;
+    max-width: 40rem;
     margin-bottom: 2rem;
   }
 
   img.mg-entities-nav {
-    width: 50%;
+    width: 100%;
+    max-width: 55rem;
   }
 </style>

@@ -18,7 +18,8 @@ export default {
 </script>
 <style scoped>
   img.mg-pckgs-xcel {
-    width: 30%;
+    width: 50%;
+    max-width: 35rem;
     margin-bottom: 2rem;
   }
 </style>

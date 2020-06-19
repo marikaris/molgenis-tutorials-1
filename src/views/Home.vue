@@ -78,9 +78,9 @@ export default {
     document.currentSlide = {}
   },
   methods: {
-    click (evt) {
-      evt.stopPropagation()
-    }
+    // click (evt) {
+    //   evt.stopPropagation()
+    // }
   }
 }
 </script>
