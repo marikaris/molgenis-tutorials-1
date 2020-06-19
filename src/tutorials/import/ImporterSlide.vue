@@ -2,13 +2,13 @@
   <div>
     <div v-if="step === 1">
       <p>Open the <code>Advanced importer</code> by clicking it in the menu.</p>
-      <img v-if="this.windowWidth > 989" class="mg-menu" src="../../assets/importer_menu.png" alt="menu"/>
-      <img v-if="this.windowWidth < 990" class="mg-menu-sm" src="../../assets/importer_menu_small.png" alt="menu"/>
+      <img v-if="this.windowWidth > 989" class="mg-menu" src="@/assets/importer_menu.png" alt="menu"/>
+      <img v-if="this.windowWidth < 990" class="mg-menu-sm" src="@/assets/importer_menu_small.png" alt="menu"/>
     </div>
     <div v-if="step === 2">
       <div class="row">
         <div class="col-sm-7">
-          <img src="../../assets/import_upload_file.png" alt="Upload file" class="import"/>
+          <img src="@/assets/import_upload_file.png" alt="Upload file" class="import"/>
         </div>
         <div class="col-sm-5">
           <h4>Step 1</h4>
@@ -19,9 +19,10 @@
     <div v-if="step === 3 || step === 4">
       <div class="row">
         <div class="col-md-5 col-sm-6">
-          <img src="../../assets/import_options.png" alt="Options" class="import-options"/>
+          <img v-if="this.windowWidth > 575" src="@/assets/import_options.png" alt="Options" class="import-options"/>
         </div>
         <div class="col-md-7 col-sm-6" v-if="step=== 3">
+          <img v-if="this.windowWidth < 576 " src="@/assets/import_md_options.png" alt="Options"/>
           <h4>Step 2 Metadata options</h4>
           <p> Select <code>Create new metadata</code> (make a new table given the EMX you are uploading).</p>
           <p><code>Ignore the metadata</code> will ignore the model you specify and upload the data if the table
@@ -29,6 +30,7 @@
             provide it, therefore your upload might still fail if you provide incorrect metadata.</p>
         </div>
         <div class="col-md-7 col-sm-6" v-if="step=== 4">
+          <img v-if="this.windowWidth < 576" src="@/assets/import_data_options.png" alt="Options"/>
           <h4>Step 3 Data options</h4>
           <p> Select <code>Add entities</code> (only add rows to the table and fails if you try to update rows)</p>
           <p><code>Add entities/ update existing</code> will add rows that are not present yet, and update rows that
@@ -43,7 +45,7 @@
     <div v-if="step === 5">
       <div class="row">
         <div class="col-md-7">
-          <img src="../../assets/import_packages.png" alt="Packages" class="import"/>
+          <img src="@/assets/import_packages.png" alt="Packages" class="import"/>
         </div>
         <div class="col-md-5">
           <h4>Step 4</h4>
@@ -58,7 +60,7 @@
     <div v-if="step === 6">
       <div class="row">
         <div class="col-sm-7">
-          <img src="../../assets/import_validation.png" alt="Validation" class="import-validation"/>
+          <img src="@/assets/import_validation.png" alt="Validation" class="import-validation"/>
         </div>
         <div class="col-sm-5">
           <h4>Step 5</h4>
@@ -74,7 +76,7 @@
     <div v-if="step === 7">
       <div class="row">
         <div class="col-md-7">
-          <img src="../../assets/import_importing.png" alt="Importing" class="import"/>
+          <img src="@/assets/import_importing.png" alt="Importing" class="import"/>
         </div>
         <div class="col-md-5">
           <h4>Step 6</h4>
@@ -85,7 +87,7 @@
     <div v-if="step === 8">
       <div class="row">
         <div class="col-md-7">
-          <img src="../../assets/import_success.png" alt="Importing" class="import"/>
+          <img src="@/assets/import_success.png" alt="Importing" class="import"/>
         </div>
         <div class="col-md-5">
           <h4>Step 7</h4>
