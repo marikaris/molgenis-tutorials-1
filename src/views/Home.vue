@@ -19,12 +19,14 @@
               <h2 class="mg-tutorials-header">MOLGENIS Tutorials</h2>
             </div>
             <div class="col-md-2 col-sm-3 col-xs-4">
-              <github-button href="https://github.com/molgenis/molgenis" data-size="large" data-show-count="true" aria-label="Star molgenis/molgenis on GitHub">Star</github-button>
+              <github-button href="https://github.com/molgenis/molgenis" data-size="large" data-show-count="true"
+                             aria-label="Star molgenis/molgenis on GitHub">Star</github-button>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <p> On this page we walk you through the most essential features of MOLGENIS. Click on the tutorial to start it. </p>
+              <p> On this page we walk you through the most essential features of MOLGENIS. Click on the tutorial to
+                start it. Use the left and right arrow keys on your keyboard to go through the tutorials.</p>
             </div>
           </div>
           <div class="row">
