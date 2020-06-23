@@ -135,6 +135,17 @@ as a list with for each row another list.
 ```
 A complete example of the usage can be found in ```/src/tutorials/TemplateSlide.vue```
 
+### MolgenisImg component
+Sometimes you want to give a title to your image. To keep the style of these titles all the same over all tutorials, the
+molgenis image component was created. Usage is as follows:
+```html
+<molgenis-img title="MOLGENIS">
+    <img src="@/assets/molgenis_blue.png" alt="molgenis"/>
+</molgenis-img>
+```
+You provide the title to the component and provide the image tag for your image in between the molgenis-img tags. Usage
+can be found in ```/src/tutorials/faq/AttributesSlide.vue```.
+
 ### Additional styling
 Sometimes basic bootstrap styling is not enough, you need to resize or recolor an element. You can 
 do this using CSS. Simply add a ```class``` to the element you want to style. For instance:
