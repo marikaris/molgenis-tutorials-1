@@ -25,7 +25,7 @@ export default {
   infos: {
     // These infos appear on the home page, below the slideshow's thumbnail
     title: 'EMX: Frequently asked questions',
-    description: 'Things that frequently go wrong when creating an EMX',
+    description: 'Things that frequently go wrong when creating an EMX.',
     // Path in the URL, NO SPACES
     path: 'faq'
   },
