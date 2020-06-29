@@ -13,6 +13,16 @@
       "name": "AttributesSlide",
       "title": "Attributes sheet issues",
       "steps": 7
+    },
+    {
+      "name": "EntitiesPkgsSlide",
+      "title": "Entities and packages sheet issues",
+      "steps": 2
+    },
+    {
+      "name": "DataSlide",
+      "title": "Data issues",
+      "steps": 5
     }
   ]
 }

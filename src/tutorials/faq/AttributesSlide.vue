@@ -14,17 +14,33 @@
       <p>It happens to everyone, you forgot to specify the id attribute of your table. You will receive this error in
         the <code>options</code> section:</p>
       <img src="@/assets/missing_id.png" alt="Error missing id"/>
-      <p>This is fixed easily: choose
-        which column will be best suited as the id for your table and set the column <code>idAttribute</code> in your
-        <code>attributes</code> sheet to <code>TRUE</code>.</p>
-      <molgenis-img title="Attributes">
-        <img src="@/assets/missing_id_fix1.png" alt="Fix 1" class="mg-xcel"/>
-      </molgenis-img>
-      <p>If you don't have a suitable column, you can add an additional column and let MOLGENIS automatically
-        generate the id's for you.</p>
-      <molgenis-img title="Attributes">
-        <img src="@/assets/missing_id_fix2.png" alt="Fix 2" class="mg-xcel"/>
-      </molgenis-img>
+      <div class="row">
+        <div class="col-md-7 col-sm-5">
+          <p>This is fixed easily: choose
+            which column will be best suited as the id for your table and set the column <code>idAttribute</code> in your
+            <code>attributes</code> sheet to <code>TRUE</code>.</p>
+        </div>
+        <div class="col-md-5 col-sm-7">
+          <molgenis-table title="Attributes"
+                          :header="['name', 'label', 'entity', 'idAttribute']"
+                          :data="[['id', 'ID', 'demo_table', 'TRUE'],
+                          ['label', 'Label', 'demo_table', ''],
+                          ['something', 'Something else', 'demo_table', '']]"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7 col-sm-5">
+          <p>If you don't have a suitable column, you can add an additional column and let MOLGENIS automatically
+            generate the id's for you.</p>
+        </div>
+        <div class="col-md-5 col-sm-7">
+          <molgenis-table title="Attributes"
+                          :header="['name', 'label', 'entity', 'idAttribute', 'auto']"
+                          :data="[['id', 'ID', 'demo_table', 'TRUE', 'TRUE'],
+                          ['label', 'Label', 'demo_table', '', ''],
+                          ['something', 'Something else', 'demo_table', '', '']]"/>
+        </div>
+      </div>
     </div>
     <div v-if="step === 3">
       <h3>Set id attribute to invisible, but forgot to set label attribute</h3>
@@ -35,9 +51,11 @@
       <img src="@/assets/missing_label.png" alt="Error missing label"/>
       <p>The fix is easy: find a column that you want to represent the values in your table and set it as label
         attribute:</p>
-      <molgenis-img title="Attributes">
-        <img src="@/assets/missing_label_fix.png" alt="Fix" class="mg-xcel"/>
-      </molgenis-img>
+      <molgenis-table title="Attributes"
+                      :header="['name', 'label', 'entity', 'idAttribute', 'visible', 'labelAttribute']"
+                      :data="[['id', 'ID', 'demo_table', 'TRUE', 'FALSE', ''],
+                          ['label', 'Label', 'demo_table', '', '', 'TRUE'],
+                          ['something', 'Something else', 'demo_table', '', '', '']]"/>
     </div>
     <div v-if="step > 3 && step < 7">
       <h3>Fully qualified name</h3>
@@ -50,28 +68,37 @@
           Case 1
         </h4>
         <div class="row">
-          <div class="col-md-4">
-            <molgenis-img title="Attributes: fully qualified name not used">
-              <img src="@/assets/attributes_pkg.png" alt="attributes" class="mg-xcel"/>
-            </molgenis-img>
+          <div class="col-sm-6">
+            <molgenis-table title="Attributes: fully qualified name not used"
+                            :header="['name', 'label', 'entity', 'idAttribute']"
+                            :data="[['id', 'ID', 'table', 'TRUE'],
+                          ['label', 'Label', 'table', ''],
+                          ['something', 'Something else', 'table', '']]"/>
           </div>
-          <div class="col-md-4">
-            <molgenis-img title="Entities: package set">
-              <img src="@/assets/entities_pkg.png" alt="entities" class="mg-pkg"/>
-            </molgenis-img>
+          <div class="col-sm-3">
+            <molgenis-table title="Entites: package is set"
+                            :header="['name', 'package', 'label']"
+                            :data="[['table', 'demo', 'Table']]"/>
           </div>
-          <div class="col-md-4">
-            <molgenis-img title="Packages: package created">
-              <img src="@/assets/packages_pkg.png" alt="packages" class="mg-pkg"/>
-            </molgenis-img>
+          <div class="col-sm-3">
+            <molgenis-table title="Entites: package is set"
+                            :header="['name', 'label']"
+                            :data="[['demo', 'Demo']]"/>
           </div>
         </div>
-        <p>You will receive this error: </p>
-        <img src="@/assets/not_set_pkg.png" alt="Error pkg not set"/>
-        <p>To fix it, simply use the fully qualified name in the <code>attributes</code> sheet:</p>
-        <molgenis-img title="Attributes">
-          <img src="@/assets/missing_id_fix1.png" alt="attributes" class="mg-xcel"/>
-        </molgenis-img>
+        <div class="row">
+          <div class="col-lg-6">
+            <p>You will receive this error: </p>
+            <img src="@/assets/not_set_pkg.png" alt="Error pkg not set" class="mg-pkg-not-set"/>
+          </div>
+          <div class="col-lg-6">
+            <molgenis-table title="The fix is simple, use the fully qualified name rather than just the tablename"
+                            :header="['name', 'label', 'entity', 'idAttribute']"
+                            :data="[['id', 'ID', 'demo_table', 'TRUE'],
+                          ['label', 'Label', 'demo_table', ''],
+                          ['something', 'Something else', 'demo_table', '']]"/>
+          </div>
+        </div>
       </div>
       <div v-if="step === 6">
         <h4>
@@ -79,21 +106,25 @@
         </h4>
         <p>You don't specify any packages or entities, and just upload the <code>attributes</code> sheet without
           specifying the fully qualified name.</p>
-        <molgenis-img title="Attributes">
-          <img src="@/assets/attributes_pkg.png" alt="attributes" class="mg-xcel"/>
-        </molgenis-img>
-        <p>This could work just fine, if you did make a package before uploading your file. You can do this either by
-        creating one in the <code>navigator</code> or by creating it using another EMX file. If you didn't do this and
-        you have no package available, you will receive this error:</p>
+        <molgenis-table title="Attributes"
+                        :header="['name', 'label', 'entity', 'idAttribute']"
+                        :data="[['id', 'ID', 'table', 'TRUE'],
+                          ['label', 'Label', 'table', ''],
+                          ['something', 'Something else', 'table', '']]"/>
+        <p>To upload this, you need to have a package available, you can do this either by creating one in the
+          <code>navigator</code>, or by creating it using another EMX file. If you have no package available, you will
+          receive this error:</p>
         <img src="@/assets/no_pkg.png" alt="Error no pkg"/>
       </div>
     </div>
     <div v-if="step === 7">
       <h3>Attribute name starting with number</h3>
       <p>It is not allowed to start the name of an attribute with a number: </p>
-      <molgenis-img title="Attributes">
-        <img src="@/assets/number_attr.png" alt="attributes" class="mg-xcel"/>
-      </molgenis-img>
+      <molgenis-table title="Attributes"
+                      :header="['name', 'label', 'entity', 'idAttribute']"
+                      :data="[['id', 'ID', 'table', 'TRUE'],
+                          ['label', 'Label', 'table', ''],
+                          ['2something', 'Something else', 'table', '']]"/>
 
       <p>You will receive this error:</p>
       <img src="@/assets/number_attr_error.png" alt="error"/>
@@ -104,13 +135,13 @@
 </template>
 
 <script>
-import MolgenisImg from '@/components/MolgenisImg'
+import MolgenisTable from '@/components/MolgenisTable'
 
 export default {
   // Here you fill in the name of your slide (use CamelCase like in this example)
   name: 'attributes-slide',
   // Register the table component if you use it in your slide
-  components: { MolgenisImg },
+  components: { MolgenisTable },
   // Just leave this there. Required if you have multiple steps in your slide, but it does't do harm if you don't.
   props: { step: Number }
 }
@@ -120,14 +151,12 @@ export default {
   img.mg-xcel {
     max-height: 10rem;
   }
-
-  img.mg-pkg {
-    max-height: 5rem;
+  img.mg-pkg-not-set{
+    margin-bottom: 1rem;
   }
-
   .eg-slideshow h3 {
     text-align: left;
-    font-size: 4rem;
+    font-size: 120%;
     color: black;
   }
 

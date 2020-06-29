@@ -136,15 +136,14 @@ as a list with for each row another list.
 A complete example of the usage can be found in ```/src/tutorials/TemplateSlide.vue```
 
 ### MolgenisImg component
-Sometimes you want to give a title to your image. To keep the style of these titles all the same over all tutorials, the
-molgenis image component was created. Usage is as follows:
+Sometimes you want to add a title or description to your image. To keep the style of these titles and descriptions all 
+the same over all tutorials, the MOLGENIS image component was created. Usage is as follows:
 ```html
 <molgenis-img title="MOLGENIS">
     <img src="@/assets/molgenis_blue.png" alt="molgenis"/>
 </molgenis-img>
 ```
-You provide the title to the component and provide the image tag for your image in between the molgenis-img tags. Usage
-can be found in ```/src/tutorials/faq/AttributesSlide.vue```.
+You provide the title to the component and provide the image tag for your image in between the molgenis-img tags.
 
 ### Additional styling
 Sometimes basic bootstrap styling is not enough, you need to resize or recolor an element. You can 
@@ -220,8 +219,8 @@ show for the MOLGENIS menu in step 1:
 ```
 
 For a complex example you can take a look at ```/src/components/MolgenisTable```. The size of the font and the padding 
-in tables is dependent on the width of the screen and the size of the data. You can find it back in the ```computed``` 
-parameter of the ```script``` section. For instance:
+in tables is dependent on the width of the table (not the window width!) and the size of the data. You can find it back 
+in the ```computed``` parameter of the ```script``` section. For instance:
 ```javascript
 needsSmallFont () {
   return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.windowWidth, 575))
