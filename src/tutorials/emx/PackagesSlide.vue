@@ -1,13 +1,16 @@
 <template>
   <div>
-    <p>A packages sheet in excel looks like this:</p>
+    <p>A packages sheet in Excel looks like this:</p>
     <img class="mg-pckgs-xcel" src="@/assets/packages_excel.png" alt="packages"/>
     <p>In CSV this would be:</p>
     <pre>"name","label","description"
-"study","study","Pharmacogenetics of NSAIDs"</pre>
+"study","Study","Pharmacogenetics of NSAIDs"</pre>
     <p>In TSV:</p>
     <pre>"name"  "label" "description"
-"study"  "study" "Pharmacogenetics of NSAIDs"</pre>
+"study"  "Study" "Pharmacogenetics of NSAIDs"</pre>
+    <p>Please note the difference in casing throughout the example. Names and ids in MOLGENIS are case sensitive, we
+      tend to use lowercase where possible in all names and ids to make sure we select the package consistently
+      throughout the EMX file.</p>
   </div>
 </template>
 <script>

@@ -7,7 +7,7 @@
           <h1> MOLGENIS</h1>
           <p>
             MOLGENIS is a free open source platform in which data can be stored and handled. In short
-            it’s a big interface build upon a database with a few API’s and lots of functionality that can
+            it’s a big interface built upon a database with a few API’s and lots of functionality that can
             be used to handle the data.
           </p>
         </div>

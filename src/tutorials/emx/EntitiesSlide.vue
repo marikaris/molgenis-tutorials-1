@@ -1,16 +1,23 @@
 <template>
   <div>
     <div v-if="step === 1">
-      <p>An entities sheet in excel looks like this:</p>
-      <img class="mg-entities" src="@/assets/entities_excel.png" alt="entities"/>
-      <p>In CSV this would be:</p>
-      <pre>"name","label","package","description"
-"Subjects","Subjects","study",""
-"Samples","Samples","study",""
-"Sex","Sex","study",""
-"Drugs","Drugs","study",""
-"Diseases","Diseases","study","ICD10 Diseases"</pre>
-      <p>In TSV: the same as CSV, but with tabs instead of commas.</p>
+      <div class="row">
+        <div class="col-md-5">
+          <p>An entities sheet in Excel looks like this:</p>
+          <img class="mg-entities" src="@/assets/entities_excel.png" alt="entities"/>
+        </div>
+        <div class="col-md-7">
+          <p>In CSV this would be:</p>
+          <pre>"name","label","package","description"
+"subjects","Subjects","study",""
+"samples","Samples","study",""
+"sex","Sex","study",""
+"drugs","Drugs","study",""
+"diseases","Diseases","study","ICD10 Diseases"</pre>
+          <p>In TSV: the same as CSV, but with tabs instead of commas.</p>
+        </div>
+      </div>
+      <p>Names of entities are also case sensitive. We try to keep them lowercase where possible to avoid mistakes.</p>
     </div>
     <div v-if="step === 2">
       <p>In the MOLGENIS navigator the result will look like:</p>
@@ -28,7 +35,7 @@ export default {
 
 <style scoped>
   img.mg-entities {
-    width: 70%;
+    width: 100%;
     max-width: 40rem;
     margin-bottom: 2rem;
   }

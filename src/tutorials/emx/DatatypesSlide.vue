@@ -33,7 +33,7 @@
     <div v-if="step === 2 || step === 3">
       <div class="row">
         <div class="col-12">
-          <p :class="{invisible: step === 3}">How do we use these datatypes in EMX? Let's find out! We begin with
+          <p :class="{invisible: step === 3}">How do we use these data types in EMX? Let's find out! We'll begin with
             a small dataset:</p>
         </div>
       </div>
@@ -98,18 +98,18 @@
         </div>
         <div class="col-md-6 col-sm-4">
           <ul>
-            <li>To generate automatic ID's you can also add an <code>auto</code> column to your attribute sheet
-              and set the value for your id attribute to TRUE (only works for the string datatype)
+            <li>To generate automatic IDs you can also add an <code>auto</code> column to your attribute sheet
+              and set the value for your id attribute to TRUE (this only works for the string data type)
             </li>
             <li>
-              In this case we chose not to do it, to keep them in our control.
+              In this example we chose not to use auto IDs, to keep the IDs in our control.
             </li>
           </ul>
         </div>
       </div>
     </div>
     <div v-if="step=== 8">
-      <p>We have determined every datatype in these tables. </p>
+      <p>We have determined every data type in these tables. </p>
       <p>Wouldn't it be nice to see the samples for each subject in the same table as well?</p>
       <p>That's where the <code>one_to_many</code> data type comes in handy!</p>
       <br/>

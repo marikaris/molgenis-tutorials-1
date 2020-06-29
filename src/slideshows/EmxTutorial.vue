@@ -25,7 +25,7 @@ export default {
   infos: {
     // These infos appear on the home page, below the slideshow's thumbnail
     title: 'Entity Model Extensible (EMX)',
-    description: 'How to create a file to import in MOLGENIS. Result EMX can be downloaded from the resources ' +
+    description: 'How to create a file to import into MOLGENIS. Result EMX can be downloaded from the resources ' +
       'section on this page.',
     // Path in the URL, NO SPACES
     path: 'emx'
