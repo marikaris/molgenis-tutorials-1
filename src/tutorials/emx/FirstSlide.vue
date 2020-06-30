@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>
-      Entity Model Extensible, or EMX in short is the MOLGENIS upload format. In this tutorial we will describe
+      Entity Model Extensible, or EMX for short, is the MOLGENIS upload format. In this tutorial we will describe
       and explain the format.
     </p>
   </div>

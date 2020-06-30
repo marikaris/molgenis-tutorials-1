@@ -25,7 +25,7 @@
       </molgenis-table>
     </div>
     <div v-else-if="step===2">
-      <p>Most important attribute sheet columns explained:</p>
+      <p>These are the most important attribute sheet columns explained:</p>
       <ul>
         <li>The <code>name</code> is the column name you use in the header of your data. It is unique per table.
         </li>
@@ -36,7 +36,7 @@
         <li>The <code>idAttribute</code> is the column that serves as the id of the table. Each table has only
           one.</li>
         <li>A table can have one <code>labelAttribute</code> that represents the row. It has to be visible. When
-          the idAttribute is invisible, the labelAttribute is required, otherwise it is recommended.</li>
+          the idAttribute is invisible, the labelAttribute is required, otherwise it is just recommended.</li>
         <li>In the <code>dataType</code> column you specify the data type of the column (default: string).</li>
         <li>The <code>refEntity</code> has to be specified for the data types xref, mref, categorical(_mref), and
           one_to_many. It is the id of the table that contains the reference data.</li>
