@@ -26,13 +26,15 @@
           <h4>Step 2 Metadata options</h4>
           <p> Select <code>Create new metadata</code> (make a new table given the EMX you are uploading).</p>
           <p><code>Ignore the metadata</code> will ignore the model you specify and upload the data if the table
-            exist, if the table doesn't exist, the upload will fail. MOLGENIS will still validate the metadata if you
-            provide it, therefore your upload might still fail if you provide incorrect metadata.</p>
+            exists. If the table doesn't exist, the upload will fail. MOLGENIS will still validate the metadata if you
+            provide it, so your upload might still fail if you provide incorrect metadata.</p>
         </div>
         <div class="col-md-7 col-sm-6" v-if="step=== 4">
           <img v-if="this.windowWidth < 576" src="@/assets/import_data_options.png" alt="Options"/>
           <h4>Step 3 Data options</h4>
-          <p> Select <code>Add entities</code> (only add rows to the table and fails if you try to update rows)</p>
+          <p>
+            Select <code>Add entities</code> (this only adds rows to the table and fails if you try to update rows)
+          </p>
           <p><code>Add entities/ update existing</code> will add rows that are not present yet, and update rows that
             already exist. Usually this option will work for every dataset. It might however be slower than the other
             options, especially with large datasets.</p>
@@ -49,8 +51,8 @@
         </div>
         <div class="col-md-5">
           <h4>Step 4</h4>
-          <p>Since we already put every entity in a package in our EMX file, this screen is pretty empty. If you keep
-          out the <code>entities</code> sheets in your EMX, you have to specify the packages
+          <p>Since we already put every entity in a package in our EMX file, this screen is pretty empty. If you don't
+          include the <code>entities</code> sheets in your EMX, you have to specify the packages
           here. Obviously, there have to be packages available. If you do not provide the <code>packages</code> sheet,
           you have to make sure you have an available package. </p>
           <p> You can press next again. </p>
@@ -66,8 +68,8 @@
           <h4>Step 5</h4>
           <p> In this step the data you are uploading will be compared to its metadata. If anything does not match, it
             will show here. </p>
-          <p> <code>Unknown</code> means that a provided column is not specified in the metadata. </p>
-          <p> <code>Available</code> means that a column specified in the metadata is not present in the data, if the
+          <p> <code>Unknown</code> means that a column provided is not specified in the metadata. </p>
+          <p> <code>Available</code> means that a column specified in the metadata is not present in the data. If the
             column is not required, your upload might still succeed. </p>
           <p> Everything is green, so you can press next again. </p>
         </div>
