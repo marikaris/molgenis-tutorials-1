@@ -11,7 +11,7 @@ in order to add a tutorial slideshow.
 Create a folder for the slides in ```/src/tutorials/*your short tutorial name*``` (e.g. ```emx``` or ```import```). 
 
 ### Step 2
-Copy the TemplateSlide.vue in ```src/tutorials``` to your folder and give it an appropriate name. Update the name in the
+Copy the TemplateSlide.vue in ```/src/tutorials``` to your folder and give it an appropriate name. Update the name in the
 ```script``` section of the file as well. Use kebab-case and let it end with ```-slide``` for naming convention 
 purposes. Replace anything between the first ```<div>```  last ```</div``` with the content of your slide 
 (see ```Add new slide section``` for more extensive explanation). 
@@ -19,7 +19,10 @@ purposes. Replace anything between the first ```<div>```  last ```</div``` with 
 ### Step 3
 Copy the ```/src/tutorials/config-template.json``` to your folder and name it ```config.json```. 
 
-### Step 4
+### Step 4 
+Copy the ```/src/tutorials/emx/index.js``` to your folder.
+
+### Step 5
 Add your slide to the config. Open the ```config.json``` you just pasted in your folder. Add an object to the 
 ```slides``` list. For instance:
 ```json
@@ -39,15 +42,18 @@ be white. The default is ```false``` and therefore the ```isFirst``` can be left
 For each slide you also need to specify the number of steps it has. The default is one and if you just have one step in 
 your slide, you can leave the ```step``` parameter out for your slide.
 
-### Step 5
+### Step 6
 Create a new Slideshow file in the ```/src/slideshows``` folder. The easiest way to do this correctly, is by duplicating 
 one of the existing slideshows and rename it. A few things need to be replaced:
 * The ```id``` of the div should be renamed to ```mg-*short name for your tutorial*``` (e.g. ```mg-emx``` and 
-```mg-import```)
+```mg-import```) and rename the ```ref``` as well. 
 * The ```imports``` on top in the ```script``` section should point to the folder you created for your tutorial.
 * The ```name``` in the ```script``` section should be replaced. It should end with ```-tutorial``` and is written in 
 kebab-case.
 * The ```infos``` in the ```script``` section should be updated (i.e. title, description, and path)
+
+### Step 7
+Open ```/src/router/index.ts``` and add the route to your tutorial.
 
 ## Add new slide
 The slides itself are as basic as possible. The only thing you need to worry about is writing correct HTML in the 
@@ -129,6 +135,16 @@ as a list with for each row another list.
 ```
 A complete example of the usage can be found in ```/src/tutorials/TemplateSlide.vue```
 
+### MolgenisImg component
+Sometimes you want to add a title or description to your image. To keep the style of these titles and descriptions all 
+the same over all tutorials, the MOLGENIS image component was created. Usage is as follows:
+```html
+<molgenis-img title="MOLGENIS">
+    <img src="@/assets/molgenis_blue.png" alt="molgenis"/>
+</molgenis-img>
+```
+You provide the title to the component and provide the image tag for your image in between the molgenis-img tags.
+
 ### Additional styling
 Sometimes basic bootstrap styling is not enough, you need to resize or recolor an element. You can 
 do this using CSS. Simply add a ```class``` to the element you want to style. For instance:
@@ -203,8 +219,8 @@ show for the MOLGENIS menu in step 1:
 ```
 
 For a complex example you can take a look at ```/src/components/MolgenisTable```. The size of the font and the padding 
-in tables is dependent on the width of the screen and the size of the data. You can find it back in the ```computed``` 
-parameter of the ```script``` section. For instance:
+in tables is dependent on the width of the table (not the window width!) and the size of the data. You can find it back 
+in the ```computed``` parameter of the ```script``` section. For instance:
 ```javascript
 needsSmallFont () {
   return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.windowWidth, 575))

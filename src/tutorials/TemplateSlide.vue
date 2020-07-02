@@ -6,6 +6,10 @@
     <!-- Remove the step divs if you have one step-->
     <div v-if="step === 1">
       <!-- Content for first step -->
+      <!-- Component for image with title -->
+      <molgenis-img title="MOLGENIS">
+        <img src="@/assets/molgenis_blue.png" alt="molgenis"/>
+      </molgenis-img>
     </div>
     <div v-if="step === 2">
       <!-- Content for second step-->
@@ -16,7 +20,7 @@
           <molgenis-table
             title="Table"
             :header="['Column 1', 'Column 2']"
-            :data="[['Value 1', 'Value 2'],['Value 1', 'Value 2']]"></molgenis-table>
+            :data="[['Value 1', 'Value 2'],['Value 1', 'Value 2']]"/>
         </div>
       </div>
     </div>
@@ -27,12 +31,13 @@
 <script>
 // Import the table component if you want to use it
 import MolgenisTable from '@/components/MolgenisTable'
+import MolgenisImg from '@/components/MolgenisImg'
 
 export default {
   // Here you fill in the name of your slide (use CamelCase like in this example)
   name: 'name-of-slide',
   // Register the table component if you use it in your slide
-  components: { MolgenisTable },
+  components: { MolgenisTable, MolgenisImg },
   // Just leave this there. Required if you have multiple steps in your slide, but it does't do harm if you don't.
   props: { step: Number }
 }

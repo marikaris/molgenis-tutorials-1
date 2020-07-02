@@ -6,16 +6,16 @@
     'mg-min-padding': needsMinPadding,
     'mg-small-font': needsSmallFont,
     'mg-xs-font': needsXsFont
-  }" class="table table-bordered mg-table">
+  }" class="table table-bordered mg-table" ref="table">
     <caption>{{title}}</caption>
     <thead>
     <tr>
-      <th v-for="(col, index) in header" :key="index">{{col}}</th>
+      <th v-for="(col, index) in header" :key="index" scope="col">{{col}}</th>
     </tr>
     </thead>
     <tbody>
     <tr v-for="(row, index) in data" :key="index">
-      <td v-for="(value, index) in row" :key="index">{{value}}</td>
+      <td v-for="(value, index) in row" :key="index" v-html="value"/>
     </tr>
     </tbody>
   </table>
@@ -29,12 +29,12 @@ export default {
   props: { title: String, header: Array, data: Array },
   data () {
     return {
-      windowWidth: 0
+      tableWidth: 0
     }
   },
   methods: {
     onResize () {
-      this.windowWidth = window.innerWidth
+      this.tableWidth = this.$refs.table.clientWidth
     }
   },
   computed: {
@@ -51,21 +51,21 @@ export default {
       return !this.needsMinPadding && (this.headerLength === 10 || isBetween(this.dataLength, 7, 14))
     },
     needsMidFont () {
-      return !(this.needsSmallFont || this.needsXsFont) && (isBetween(this.headerLength, 7, 12) || isBetween(this.dataLength, 10, 14) || isBelow(this.windowWidth, 845))
+      return !(this.needsSmallFont || this.needsXsFont) && (isBetween(this.headerLength, 7, 12) || isBetween(this.dataLength, 10, 14) || isBelow(this.tableWidth, 675))
     },
     needsMinPadding () {
-      return isAbove(this.headerLength, 10) || isAbove(this.dataLength, 12) || isBelow(this.windowWidth, 800)
+      return isAbove(this.headerLength, 10) || isAbove(this.dataLength, 12) || isBelow(this.tableWidth, 550)
     },
     needsSmallFont () {
-      return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.windowWidth, 575))
+      return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.tableWidth, 475))
     },
     needsXsFont () {
-      return isAbove(this.headerLength, 13) || isAbove(this.dataLength, 22) || (isAbove(this.headerLength, 10) && isBelow(this.windowWidth, 825))
+      return isAbove(this.headerLength, 13) || isAbove(this.dataLength, 22) || (isAbove(this.headerLength, 10) && isBelow(this.tableWidth, 500))
     }
   },
   mounted () {
     this.$nextTick(() => {
-      this.windowWidth = window.innerWidth
+      this.tableWidth = this.$refs.table.clientWidth
       window.addEventListener('resize', this.onResize)
     })
   },
@@ -76,39 +76,37 @@ export default {
 }
 </script>
 
+<style>
+  .mg-slide table.mg-table>tbody>tr>td>span {
+    font-size: 100%!important;
+  }
+</style>
 <style scoped>
   .mg-table {
     max-width: 100%;
+    margin-bottom: 0.5rem;
   }
-
   .mg-normal-font {
-    font-size: 70%;
+    font-size: 50%;
   }
-
   .mg-mid-font {
     font-size: 50%;
   }
-
   .mg-mid-font > caption {
-    font-size: 140%;
+    font-size: 100%;
   }
-
   .mg-small-font {
     font-size: 42%;
   }
-
   .mg-small-font > caption {
-    font-size: 175%;
+    font-size: 125%;
   }
-
   .mg-xs-font {
     font-size: 30%;
   }
-
   .mg-min-padding > caption {
     padding: 0;
   }
-
   .mg-min-padding > tbody > tr > td,
   .mg-min-padding > thead > tr > th {
     padding: 0.1rem;
