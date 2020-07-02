@@ -22,7 +22,11 @@
     {
       "name": "DataSlide",
       "title": "Data issues",
-      "steps": 10
+      "steps": 15
+    },
+    {
+      "name": "EndSlide",
+      "title": "Summary"
     }
   ]
 }

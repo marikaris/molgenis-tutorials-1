@@ -148,7 +148,7 @@
       </div>
     </div>
     <div v-if="step===9">
-      <h3>Case 3: Typo's in IDs</h3>
+      <h3>Case 3: Misspelling IDs</h3>
       <p>The table you are uploading looks like this:</p>
       <div class="row">
         <div class="col-xs-4 col-md-6">
@@ -188,6 +188,76 @@
       </molgenis-img>
       <p>Make sure you only reference an mref value once per cell.</p>
     </div>
+    <div v-if="step===11">
+      <h3>Misspelled table names</h3>
+      <p>When you misspell the name of a table in the tab in Excel or the name of your csv or tsv file, you will
+        receive an error like this:</p>
+      <div class="row">
+        <div class="col-4">
+          <molgenis-img title="Error when using excel">
+            <img src="@/assets/incorrect_table_name.png" class="mg-error" alt="Error"/>
+          </molgenis-img>
+        </div>
+        <div class="col-8">
+          <molgenis-img title="Error when using CSV/TSV">
+            <img src="@/assets/incorrect_table_name_csv.png" class="mg-error" alt="Error"/>
+          </molgenis-img>
+        </div>
+      </div>
+      <br/><br/>
+      <p>In this case we uploaded a capitalised table name. Since MOLGENIS is case sensitive, it doesn't recognise the
+        table name. Simply fix the name by making it lowercase and upload your file again.</p>
+    </div>
+    <div v-if="step===12">
+      <h3>Leaving required field empty</h3>
+      <p>If you set the <code>nillable</code> column in  your <code>attributes</code> sheet to <code>FALSE</code> for a
+        certain column, you cannot leave its value empty. You will receive an error like this:</p>
+      <img src="@/assets/empty_value.png" class="mg-error" alt="Error"/>
+    </div>
+    <div v-if="step===13">
+      <h3>Referring to the label of a reference or incorrect references</h3>
+      <p>When using referencing values like xrefs, mrefs, categoricals and categorical mrefs, you should refer to them
+      by their IDs rather than their labels. MOLGENIS won't recognise them if you use the labels:</p>
+      <img src="@/assets/unknown_ref.png" class="mg-error" alt="Error"/>
+      <br/><br/>
+      <p>Additionally, when using the name of a ref that doesn't exist in the ref entity, you will receive the same
+      error. You should first add the value you try to select to the ref entity before selecting it.</p>
+    </div>
+    <div v-if="step===14||step===15">
+      <h3>CSV files</h3>
+      <div v-if="step===14">
+        <p>When creating a CSV file, it is recommended to put quotes (") around the values of each cell. Although your
+          file might upload just fine without them, especially when having (categorical) mrefs in your data, it might cause
+          errors.</p>
+
+        <div class="row">
+          <div class="col-md-5">
+            <p>We are trying to upload this:</p>
+            <pre>id,label,ref
+id1,Label 1,ref1,ref2</pre>
+          </div>
+          <div class="col-md-7">
+            <molgenis-img title="The error you will receive looks like this">
+              <img src="@/assets/csv_mref.png" class="mg-error" alt="Error"/>
+            </molgenis-img>
+          </div>
+        </div>
+      </div>
+      <div v-if="step===15">
+        <p>The same sort of error can occur, if you forget a comma in your file:</p>
+        <div class="row">
+          <div class="col-md-5">
+          <pre>"id","label","ref"
+"id1","Label 1""ref1,ref2"</pre>
+          </div>
+          <div class="col-md-7">
+            <molgenis-img title="The error you will receive looks like this">
+              <img src="@/assets/csv_forgot_comma.png" class="mg-error" alt="Error"/>
+            </molgenis-img>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Leave this last div!-->
   </div>
 </template>
@@ -225,9 +295,6 @@ export default {
 }
 </script>
 <style scoped>
-  .eg-slideshow img.mg-auto-id {
-    max-width: 100%;
-  }
   .eg-slideshow h3 {
     text-align: left;
     font-size: 120%;
