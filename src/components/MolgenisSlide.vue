@@ -6,6 +6,19 @@
         <img v-else class="mg-slide-logo" src="../assets/molgenis_blue.png" alt="molgenis"/>
         <h2>{{title}}</h2>
         <slot></slot>
+        <div class="fixed-bottom mg-next-prev-btns">
+          <div class="btn-group" role="group">
+            <button v-if="isFirst || isLast" type="button" class="btn btn-primary">
+              <router-link to="/" class="btn-primary">
+                <font-awesome-icon icon="home" /> Home
+              </router-link>
+            </button>
+            <button v-if="!isFirst" type="button" class="btn btn-primary" @click.stop="goBack">
+              <font-awesome-icon icon="chevron-left" /> Previous</button>
+            <button v-if="!isLast" type="button" class="btn btn-primary" @click.stop="goNext">
+              <font-awesome-icon icon="chevron-right" /> Next</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -14,7 +27,13 @@
 
 export default {
   name: 'molgenis-slide',
-  props: { title: String, isFirst: { type: Boolean, default: false } },
+  props: {
+    title: String,
+    isFirst: { type: Boolean, default: false },
+    isLast: { type: Boolean, default: false },
+    goBack: Function,
+    goNext: Function
+  },
   data () {
     return {
       windowWidth: 0
@@ -97,5 +116,9 @@ export default {
 
   .embedded-slideshow-container .mg-first-slide h2{
     border-bottom: 0.1rem solid white;
+  }
+
+  .embedded-slideshow-container .mg-next-prev-btns {
+    display: none;
   }
 </style>
