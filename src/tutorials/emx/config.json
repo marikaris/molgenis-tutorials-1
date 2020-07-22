@@ -41,7 +41,8 @@
   ,
     {
       "name":  "end-slide",
-      "title": "Summary"
+      "title": "Summary",
+      "isLast": true
     }
   ]
 }

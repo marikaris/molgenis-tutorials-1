@@ -29,8 +29,8 @@
       <ul>
         <li>The <code>name</code> is the column name you use in the header of your data. It is unique per table.
         </li>
-        <li>The <code>label</code> column contains the names of the columns as they will be presented in MOLGENIS.
-          Labels don’t have to be unique.</li>
+        <li>The <code>label</code> column contains names of columns as they will be presented in MOLGENIS. They don’t
+          have to be unique.</li>
         <li>In the <code>entity</code> column you fill in the id of the table. For tables created via EMX, the
           name consists of the package and table name, joined by an underscore.</li>
         <li>The <code>idAttribute</code> is the column that serves as the id of the table. Each table has only
@@ -40,12 +40,12 @@
         <li>In the <code>dataType</code> column you specify the data type of the column (default: string).</li>
         <li>The <code>refEntity</code> has to be specified for the data types xref, mref, categorical(_mref), and
           one_to_many. It is the id of the table that contains the reference data.</li>
-        <li>The <code>mappedBy</code> column has to be specified for one_to_many attributes. You specify the
-          column in the refEntity table upon which the values have to be based.</li>
+        <li>The <code>mappedBy</code> column has to be specified for one_to_many attributes. You specify the column in
+          the refEntity table upon which the values have to be based.</li>
         <li>You can also specify per attribute whether they are <code>visible</code>/<code>nillable</code> in
           the dataexplorer.</li>
-        <li>The <code>description</code> will be shown if you hover over the column in the dataexplorer and
-          when filling in the data via a form in  MOLGENIS.</li>
+        <li>The <code>description</code> will be shown if you hover over a column in the dataexplorer and when filling
+          in data via a form in MOLGENIS.</li>
       </ul>
     </div>
     <div v-else>

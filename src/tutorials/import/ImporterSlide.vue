@@ -138,7 +138,7 @@ export default {
 
   img.import {
     max-width: 100%;
-    width: 50rem;
+    width: 48.5rem;
   }
 
   img.import-options {

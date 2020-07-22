@@ -5,7 +5,9 @@
              :key="index"
              :steps="slide.steps ? slide.steps : 1">
         <molgenis-slide :title="slide.title"
-                        :is-first="slide.isFirst ? slide.isFirst : false">
+                        :is-first="slide.isFirst ? slide.isFirst : false"
+                        :is-last="slide.isLast ? slide.isLast : false"
+                        :go-back="previousStep" :go-next="nextStep">
           <component :is="slide.name"  v-bind="{step : step}"/>
         </molgenis-slide>
       </slide>

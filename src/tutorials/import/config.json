@@ -12,7 +12,8 @@
     },
     {
       "name": "end-slide",
-      "title": "summary"
+      "title": "summary",
+      "isLast": true
     }
   ]
 }
