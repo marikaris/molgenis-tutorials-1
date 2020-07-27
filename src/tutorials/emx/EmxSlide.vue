@@ -18,13 +18,13 @@
           <molgenis-table
             title="Table"
             :header="['Column 1', 'Column 2']"
-            :data="[['Value 1', 'Value 2'],['Value 1', 'Value 2']]"></molgenis-table>
+            :data="[['Value 1', 'Value 2'],['Value 1', 'Value 2']]"/>
         </div>
         <div class="col-xs-6">
           <molgenis-table
             title="EntityType"
             :header="['Attribute 1', 'Attribute 2']"
-            :data="[['Value 1', 'Value 2'],['Value 1', 'Value 2']]"></molgenis-table>
+            :data="[['Value 1', 'Value 2'],['Value 1', 'Value 2']]"/>
         </div>
       </div>
       <hr/>

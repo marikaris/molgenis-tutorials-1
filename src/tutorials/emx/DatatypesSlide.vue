@@ -27,8 +27,7 @@
                ['hyperlink', 'A link to a website'],
                ['one_to_many', 'Relation between two columns in possibly different datasets'],
                ['text', 'Text of possibly more than 255 characters']
-               ]">
-      </molgenis-table>
+               ]"/>
     </div>
     <div v-if="step === 2 || step === 3">
       <div class="row">
@@ -43,14 +42,14 @@
             [1, 'F', 50, 60, 170, 'Indomethacin'], [2, 'M', 53, 80, 180, 'Indomethacin'],
             [3, 'F', 53, 56, 160, 'Indomethacin'], [4, 'F', 45, 70, 175, 'Indomethacin'],
             [5, 'M', 48, 79, 190, 'Indomethacin'], [6, 'M', 49, 70, 185, 'Indomethacin']
-          ]" :header="['id', 'sex', 'age', 'weight', 'height', 'drug']"></molgenis-table>
+          ]" :header="['id', 'sex', 'age', 'weight', 'height', 'drug']"/>
         </div>
         <div class="col-md-4 col-sm-5" v-if="step === 2">
           <molgenis-table title="Samples" :data="[
               [1, 0.25, 1.5], [1, 0.5, 0.94], [1, 0.75, 0.78], [1, 1, 0.48], [1, 1.25, 0.37], [1, 2, 0.19], [1, 3, 0.12],
               [1, 4, 0.11], [1, 5, 0.08], [1, 6, 0.07], [1, 8, 0.05], [2, 0.25, 2.03], [2, 0.5, 1.63], [2, 0.75, 0.71],
               ['...', '...', '...']
-            ]" :header="['subject', 'time', 'conc']"></molgenis-table>
+            ]" :header="['subject', 'time', 'conc']"/>
         </div>
       </div>
     </div>
@@ -65,13 +64,12 @@
             [5, 'M', 48, 79, 190, 'Indomethacin'], [6, 'M', 49, 70, 185, 'Indomethacin'],
             ['int', 'categorical', 'int', 'int', 'int', 'categorical']]"
                         :header="['id', 'sex', 'age', 'weight', 'height', 'drug']"
-                        v-if="step > 3 && step < 7"></molgenis-table>
+                        v-if="step > 3 && step < 7"/>
       </div>
       <div class="col-3">
         <div v-if='step === 5'>
           <p>For the categoricals we need to add reference tables: </p>
-          <molgenis-table title="sex" :header="['id', 'label']" :data="[['f', 'Female'], ['m', 'Male']]">
-          </molgenis-table>
+          <molgenis-table title="sex" :header="['id', 'label']" :data="[['f', 'Female'], ['m', 'Male']]"/>
         </div>
         <div v-if='step === 6'>
           <p>And: </p>
@@ -79,8 +77,7 @@
                 ['asp','Aspirine'], ['celecoxib', 'Celecoxib'],['diclo', 'Diclofenac'],['diflu', 'Diflunisal'],
                 ['etodo', 'Etodolac'], ['ibu', 'Ibuprofen'], ['indomet', 'Indomethacin'], ['ketopro', 'Ketoprofen'],
                 ['ketoro', 'Ketorolac'], ['nabu', 'Nabumetone'], ['napro', 'Naproxen'], ['oxa', 'Oxaprozin'],
-                ['piro', 'Piroxicam'], ['salsa', 'Salsalate'], ['sulin', 'Sulindac'],['tol', 'Tolmetin']]">
-          </molgenis-table>
+                ['piro', 'Piroxicam'], ['salsa', 'Salsalate'], ['sulin', 'Sulindac'],['tol', 'Tolmetin']]"/>
         </div>
       </div>
     </div>
@@ -94,7 +91,7 @@
               ['AJ', 1, 6, 0.07], ['AK', 1, 8, 0.05], ['AL', 2, 0.25, 2.03], ['AM', 2, 0.5, 1.63],
               ['AN', 2, 0.75, 0.71], ['...', '...', '...', '...'], ['We’ll add a column with unique ID’s.',
               'xref to the subjects table', 'decimal', 'decimal']
-            ]" :header="['id', 'subject', 'time', 'conc']"></molgenis-table>
+            ]" :header="['id', 'subject', 'time', 'conc']"/>
         </div>
         <div class="col-md-6 col-sm-4">
           <ul>

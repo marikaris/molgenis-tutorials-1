@@ -131,7 +131,7 @@ as a list with for each row another list.
 <molgenis-table
             title="Table"
             :header="['Column 1', 'Column 2']"
-            :data="[['Value 1', 'Value 2'],['Value 1', 'Value 2']]"></molgenis-table>
+            :data="[['Value 1', 'Value 2'],['Value 1', 'Value 2']]"/>
 ```
 A complete example of the usage can be found in ```/src/tutorials/TemplateSlide.vue```
 

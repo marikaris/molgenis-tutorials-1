@@ -21,8 +21,7 @@
                                 ['subject', 'Subject', 'study_samples', '', '', 'xref', 'study_subjects', '', '', 'FALSE', ''],
                                 ['time', 'Time (h)', 'study_samples', '', 'TRUE', 'decimal', '', '', '', 'FALSE', 'Times at which blood samples were drawn (hr)'],
                                 ['conc', 'Concentration (mcg/ml)', 'study_samples', '', 'TRUE', 'decimal', '', '', '', 'FALSE', 'Plasma concentrations drug (mcg/ml)']
-                                ]">
-      </molgenis-table>
+                                ]"/>
     </div>
     <div v-else-if="step===2">
       <p>These are the most important attribute sheet columns explained:</p>
