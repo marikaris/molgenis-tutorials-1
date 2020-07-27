@@ -30,7 +30,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'molgenis-tutorial-preview',
   props: { tutorials: Array },
