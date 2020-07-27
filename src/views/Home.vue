@@ -3,7 +3,7 @@
     <div class="col-12">
       <div class="row">
         <div class="col-12 banner" id="mg-top-banner">
-          <img class="mg-logo" src="../assets/molgenis_white.png" alt="molgenis"/>
+          <img class="mg-logo" src="@/assets/molgenis_white.png" alt="molgenis"/>
           <h1> MOLGENIS</h1>
           <p>
             MOLGENIS is a free open source platform in which data can be stored and handled. In short
@@ -20,7 +20,8 @@
             </div>
             <div class="col-md-2 col-sm-3 col-xs-4">
               <github-button href="https://github.com/molgenis/molgenis" data-size="large" data-show-count="true"
-                             aria-label="Star molgenis/molgenis on GitHub">Star</github-button>
+                             aria-label="Star molgenis/molgenis on GitHub">Star
+              </github-button>
             </div>
           </div>
           <div class="row">
@@ -33,25 +34,14 @@
             <div class="col-md-10">
               <div class="thumbnails">
                 <h3>Tutorials</h3>
-                <div class="box-card" v-for="(tutorial, index) in tutorials" :key="index">
-                  <router-link :to="tutorial.infos.path" @click.native="click">
-                    <div class="embedded-slideshow-container">
-                      <component :is="tutorial" :embedded=true :keyboardNavigation="false"
-                                 :mouseNavigation="false"></component>
-                    </div>
-                  </router-link>
-                  <div class="mg-caption">
-                    <h3>{{tutorial.infos.title}}</h3>
-                    <p class="thumbnail-description">
-                      {{tutorial.infos.description}}
-                    </p>
-                  </div>
-                </div>
+              <molgenis-tutorial-preview :tutorials="tutorials"/>
               </div>
             </div>
             <div class="col-md-2">
               <h3>Resources</h3>
-              <a :href="`${publicPath}data/demo.xlsx`" download><font-awesome-icon icon="download" /> Demo EMX</a>
+              <a :href="`${publicPath}data/demo.xlsx`" download>
+                <font-awesome-icon icon="download"/>
+                Demo EMX</a>
             </div>
           </div>
         </div>
@@ -62,34 +52,34 @@
 
 <script>
 import tutorials from '@/slideshows/tutorials.ts'
-
 import GithubButton from 'vue-github-button'
+import MolgenisTutorialPreview from '@/components/MolgenisTutorialPreview'
 
 export default {
   name: 'home',
   components: {
-    GithubButton
+    GithubButton,
+    MolgenisTutorialPreview
   },
   data: function () {
     return {
       tutorials: tutorials.list,
-      publicPath: process.env.BASE_URL
+      publicPath: process.env.BASE_URL,
+      isVisible: false,
+      isStacked: true
     }
   },
   mounted: function () {
     document.currentSlide = {}
-  },
-  methods: {
-    click (evt) {
-      evt.stopPropagation()
-    }
   }
 }
 </script>
 <style lang='scss' scoped>
+
   .mg-tutorials-header {
     margin-top: 0;
   }
+
   .banner {
     padding-left: 12%;
     padding-right: 12%;
@@ -99,12 +89,13 @@ export default {
 
   #mg-top-banner {
     font-family: 'IBM Plex Mono', monospace;
-    background-color:rgb(1, 127, 253);
+    background-color: rgb(1, 127, 253);
     color: white;
     font-size: 1.6rem;
     line-height: 3.0rem;
   }
-  #mg-top-banner h1{
+
+  #mg-top-banner h1 {
     border-top: 0.5rem solid;
     font-size: 4.8rem;
     line-height: 4.8rem;
@@ -116,34 +107,6 @@ export default {
 
   .mg-logo {
     height: 6rem;
-  }
-
-  .mg-caption {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .grey {
-    color: #bbb
-  }
-
-  .box-card {
-    text-align: center;
-    margin-bottom: 50px;
-
-    .embedded-slideshow-container {
-      position: relative;
-      width: 150px;
-      height: 120px;
-      margin: 0 auto;
-      border: 1px solid grey;
-      overflow: hidden;
-    }
-
-    h3, p {
-      margin-bottom: 0;
-      margin-top: 0;
-    }
   }
 
   a {
