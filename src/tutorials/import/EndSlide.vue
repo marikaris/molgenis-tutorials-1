@@ -6,7 +6,7 @@
       <li> How to upload your EMX file in MOLGENIS </li>
     </ul>
     <p>
-      Check out the next tutorials to find out what you can do with your data now it is uploaded in MOLGENIS.
+      Check out the next tutorials to find out what you can do with your data now it has been uploaded in MOLGENIS.
     </p>
   </div>
 </template>

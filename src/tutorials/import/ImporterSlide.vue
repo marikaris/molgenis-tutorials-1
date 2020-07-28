@@ -38,7 +38,7 @@
           <p><code>Add entities/ update existing</code> will add rows that are not present yet, and update rows that
             already exist. Usually this option will work for every dataset. It might however be slower than the other
             options, especially with large datasets.</p>
-          <p><code>Update entities</code> will consequently only update existing rows and will fail if you try to add
+          <p><code>Update entities</code> will only update existing rows and will fail if you try to add
             new ones.</p>
           <p> You can press next. </p>
         </div>
