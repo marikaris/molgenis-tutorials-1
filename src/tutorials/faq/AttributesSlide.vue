@@ -59,10 +59,10 @@
     </div>
     <div v-if="step > 3 && step < 7">
       <h3>Fully qualified name</h3>
-      <p v-if="step === 4">The fully qualified name of the table is the ID MOLGENIS uses to recognise the table. When
+      <p v-if="step === 4">The fully qualified name of the table is the ID MOLGENIS uses to recognise the table when
         creating a table using EMX. The fully qualified name consists of the name of the package and the name of the
-        table, joined by an underscore. When creating an attritbutes sheet, in most cases you need to use this fully
-        qualified name. There are two errors that are associated with these kinds of problems.</p>
+        table, joined by an underscore. When creating an attributes sheet, in most cases you need to use this fully
+        qualified name. There are two errors that are associated with this kind of problem.</p>
       <div v-if="step === 5">
         <h4>
           Case 1
@@ -118,8 +118,8 @@
       </div>
     </div>
     <div v-if="step === 7">
-      <h3>Attribute name starting with number</h3>
-      <p>It is not allowed to start the name of an attribute with a number: </p>
+      <h3>Attribute name starting with a number</h3>
+      <p>Starting the name of an attribute with a number is not allowed: </p>
       <molgenis-table title="Attributes"
                       :header="['name', 'label', 'entity', 'idAttribute']"
                       :data="[['id', 'ID', 'table', 'TRUE'],

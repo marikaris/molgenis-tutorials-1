@@ -2,8 +2,8 @@
   <!-- Leave this first div -->
   <div>
     <p v-if="step === 1">
-      The <code>entities</code> and <code>packages</code> tables are much smaller and therefore less error prone. We
-      will address possible issues with those slides over here.
+      The <code>entities</code> and <code>packages</code> tables are much smaller and therefore less error-prone. We
+      will address possible issues with those slides next.
     </p>
     <div v-if="step === 2">
       <h3>Combination of entity and package name too long</h3>

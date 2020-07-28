@@ -81,11 +81,11 @@
       <div class="row">
         <div class="col">
           <h3>Dates</h3>
-          <p>Specifying the data data type should be according to the ISO-8601 calendar system (
-            <code>yyyy-mm-dd</code>).
+          <p>Specifying the data type for date information should be according to the ISO-8601 calendar system
+            (<code>yyyy-mm-dd</code>).
           </p>
           <p>
-            Date time data types should be specified like this: <code>yyyy-mm-ddThh:mm:ss+timezone e.g.
+            Datetime data types should be specified as follows: <code>yyyy-mm-ddThh:mm:ss+timezone e.g.
             1985-08-12T11:12:13+0500</code>. In this data type, the time zone information may be used to specify the
             instant but is not stored.
           </p>
@@ -97,7 +97,7 @@
     </div>
     <div v-if="step===5">
       <h3>Duplication</h3>
-      <p>There are several issues with duplicating data. We will show a couple of them here.</p>
+      <p>There are several issues with duplicating data. We will show a couple of them next.</p>
     </div>
     <div v-if="step===6">
       <h3>Case 1: Duplicated rows in data</h3>
@@ -128,23 +128,27 @@
         </div>
       </div>
       <div v-if="step===8">
-        <p>Now you upload this using <code>add/update</code> to update your data:</p>
+        <p>Now you upload the following dataset using <code>add/update</code> to update your data:</p>
         <div class="row">
-          <div class="col-xs-4 col-md-6">
+          <div class="col">
             <molgenis-table title="demo_example" :header="['label', 'ref']"
-                            :data="[['Row 1', 'ref1,ref2'], ['Row 2', 'ref3'], ['Row3', 'ref2']]"/>
+                            :data="[['Row 1', 'ref1,ref2'], ['Row 2', 'ref3'], ['Row 3', 'ref2']]"/>
           </div>
-          <div class="col-xs-8 col-md-6">
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-7 col-md-5 col-xl-4">
             <molgenis-img title="Your first lines are duplicated">
               <img src="@/assets/auto_id_upload2.png" class="mg-auto-id" alt="MOLGENIS preview"/>
             </molgenis-img>
           </div>
+          <div class="col-xs-12 col-sm-5 col-md-7 col-xl-8">
+            <p>There are two possible solutions:</p>
+            <ul>
+              <li>1. First download your data and add the new rows to that file to update the data</li>
+              <li>2. Only add new rows and don't reupload the lines that are already in MOLGENIS</li>
+            </ul>
+          </div>
         </div>
-        <p>There are two possible solutions:</p>
-        <ul>
-          <li>1. First download your data and add the new rows to that file to update the data</li>
-          <li>2. Only add new rows and don't reupload the lines that are already in MOLGENIS</li>
-        </ul>
       </div>
     </div>
     <div v-if="step===9">
@@ -162,7 +166,7 @@
           </molgenis-img>
         </div>
       </div>
-      <p>You want to update you data, so you upload the following:</p>
+      <p>You want to update your data, so you upload the following:</p>
       <div class="row">
         <div class="col-xs-4 col-md-6">
           <molgenis-table title="demo_example update"
@@ -175,7 +179,11 @@
           </molgenis-img>
         </div>
       </div>
-      <p>Make sure you are using exactly the same IDs if you want to update your rows.</p>
+      <div class="row">
+        <div class="offset-md-2 col-md-10 col-sm-12">
+          <p>Make sure you are using exactly the same IDs if you want to update your rows.</p>
+        </div>
+      </div>
     </div>
     <div v-if="step===10">
       <h3>Case 4: Duplicated value in mref</h3>
@@ -221,15 +229,14 @@
       <img src="@/assets/unknown_ref.png" class="mg-error" alt="Error"/>
       <br/><br/>
       <p>Additionally, when using the name of a ref that doesn't exist in the ref entity, you will receive the same
-      error. You should first add the value you try to select to the ref entity before selecting it.</p>
+      error. You should first add the value you're trying to select to the ref entity before selecting it.</p>
     </div>
     <div v-if="step===14||step===15">
       <h3>CSV files</h3>
       <div v-if="step===14">
-        <p>When creating a CSV file, it is recommended to put quotes (") around the values of each cell. Although your
-          file might upload just fine without them, especially when having (categorical) mrefs in your data, it might cause
-          errors.</p>
-
+        <p>When creating a CSV file, putting quotes (") around the values of each cell is recommended. Although your
+          file might upload just fine without them, it might cause errors, especially when having (categorical) mrefs in
+          your data.</p>
         <div class="row">
           <div class="col-md-5">
             <p>We are trying to upload this:</p>
@@ -310,5 +317,9 @@ export default {
   .mg-error {
     max-width: 40rem;
     width: 100%;
+  }
+
+  .mg-auto-id {
+    max-width: 100%;
   }
 </style>

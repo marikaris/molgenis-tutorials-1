@@ -3,7 +3,7 @@
   <div>
     <p>
       We separated the possible issues into two parts: metadata issues and data issues.
-      The first part will focus on metadata issues: mistakes that frequently made in <code>attributes</code>,
+      The first part will focus on metadata issues: mistakes that are frequently made in <code>attributes</code>,
       <code>entities</code>, and <code>packages</code> files/sheets.
     </p>
     <!-- Leave this last div!-->
