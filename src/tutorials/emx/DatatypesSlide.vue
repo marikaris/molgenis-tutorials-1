@@ -29,10 +29,10 @@
                ['text', 'Text of possibly more than 255 characters']
                ]"/>
     </div>
-    <div v-if="step === 2 || step === 3">
+    <div v-if="step === 2">
       <div class="row">
         <div class="col-12">
-          <p :class="{invisible: step === 3}">How do we use these data types in EMX? Let's find out! We'll begin with
+          <p>How do we use these data types in EMX? Let's find out! We'll begin with
             a small dataset:</p>
         </div>
       </div>
@@ -44,7 +44,7 @@
             [5, 'M', 48, 79, 190, 'Indomethacin'], [6, 'M', 49, 70, 185, 'Indomethacin']
           ]" :header="['id', 'sex', 'age', 'weight', 'height', 'drug']"/>
         </div>
-        <div class="col-md-4 col-sm-5" v-if="step === 2">
+        <div class="col-md-4 col-sm-5">
           <molgenis-table title="Samples" :data="[
               [1, 0.25, 1.5], [1, 0.5, 0.94], [1, 0.75, 0.78], [1, 1, 0.48], [1, 1.25, 0.37], [1, 2, 0.19], [1, 3, 0.12],
               [1, 4, 0.11], [1, 5, 0.08], [1, 6, 0.07], [1, 8, 0.05], [2, 0.25, 2.03], [2, 0.5, 1.63], [2, 0.75, 0.71],
@@ -53,9 +53,9 @@
         </div>
       </div>
     </div>
-    <div class="row" v-if="step > 2 && step < 7">
+    <div class="row" v-if="step > 2 && step < 6">
       <div class="col-9">
-        <p v-if="step > 2 && step < 7">
+        <p v-if="step > 2 && step < 6">
           First we determine the data types of the subjects table.
         </p>
         <molgenis-table class="mg-subjects" title="Subjects" :data="[
@@ -64,14 +64,14 @@
             [5, 'M', 48, 79, 190, 'Indomethacin'], [6, 'M', 49, 70, 185, 'Indomethacin'],
             ['int', 'categorical', 'int', 'int', 'int', 'categorical']]"
                         :header="['id', 'sex', 'age', 'weight', 'height', 'drug']"
-                        v-if="step > 3 && step < 7"/>
+                        v-if="step > 2 && step < 6"/>
       </div>
       <div class="col-3">
-        <div v-if='step === 5'>
+        <div v-if='step === 4'>
           <p>For the categoricals we need to add reference tables: </p>
           <molgenis-table title="sex" :header="['id', 'label']" :data="[['f', 'Female'], ['m', 'Male']]"/>
         </div>
-        <div v-if='step === 6'>
+        <div v-if='step === 5'>
           <p>And: </p>
           <molgenis-table title="drugs" :header="['id', 'label']" :data="[
                 ['asp','Aspirine'], ['celecoxib', 'Celecoxib'],['diclo', 'Diclofenac'],['diflu', 'Diflunisal'],
@@ -81,11 +81,11 @@
         </div>
       </div>
     </div>
-    <div v-if="step === 7">
+    <div v-if="step === 6">
       <div class="row">
         <div class="col-md-6 col-sm-8">
           <p>Let's do the samples table!</p>
-          <molgenis-table title="Samples" :data="[
+          <molgenis-table title="Samples" class="mg-samples" :data="[
               ['AA', 1, 0.25, 1.5], ['AB', 1, 0.5, 0.94], ['AC', 1, 0.75, 0.78], ['AD', 1, 1, 0.48],
               ['AE', 1, 1.25, 0.37], ['AF', 1, 2, 0.19], ['AG', 1, 3, 0.12], ['AH', 1, 4, 0.11], ['AI', 1, 5, 0.08],
               ['AJ', 1, 6, 0.07], ['AK', 1, 8, 0.05], ['AL', 2, 0.25, 2.03], ['AM', 2, 0.5, 1.63],
@@ -99,13 +99,13 @@
               and set the value for your id attribute to TRUE (this only works for the string data type)
             </li>
             <li>
-              In this example we chose not to use auto IDs, to keep the IDs in our control.
+              In this example we chose not to use auto IDs, to keep the IDs under our control.
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <div v-if="step=== 8">
+    <div v-if="step=== 7">
       <p>We have determined every data type in these tables. </p>
       <p>Wouldn't it be nice to see the samples for each subject in the same table as well?</p>
       <p>That's where the <code>one_to_many</code> data type comes in handy!</p>
@@ -127,13 +127,8 @@ export default {
 }
 </script>
 <style>
-  table.mg-subjects > tbody > tr:nth-child(7) {
+  table.mg-subjects > tbody > tr:nth-child(7), table.mg-samples > tbody > tr:nth-child(16) {
     background-color: #353535;
     color: #72F6B2;
-  }
-</style>
-<style scoped>
-  .invisible {
-    visibility: hidden;
   }
 </style>

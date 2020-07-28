@@ -8,7 +8,7 @@
     <p>In TSV:</p>
     <pre>"name"  "label" "description"
 "study"  "Study" "Pharmacogenetics of NSAIDs"</pre>
-    <p>Please note the difference in casing throughout the example. Names and ids in MOLGENIS are case sensitive, we
+    <p>Please note the difference in casing throughout the example. Names and ids in MOLGENIS are case sensitive. We
       tend to use lowercase where possible in all names and ids to make sure we select the package consistently
       throughout the EMX file.</p>
   </div>

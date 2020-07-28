@@ -31,14 +31,13 @@
     {
       "name":  "datatypes-slide",
       "title": "Datatypes",
-      "steps": 8
+      "steps": 7
     },
     {
       "name":  "create-table-slide",
       "title": "Create Table",
       "steps": 3
-    }
-  ,
+    },
     {
       "name":  "end-slide",
       "title": "Summary",

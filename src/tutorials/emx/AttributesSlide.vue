@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="step === 1">
-      <p>The attributes sheet specifies the metadata of each table. In Excel it looks like this:</p>
+      <p>The attributes sheet specifies the metadata of each table. In Excel the result will look like this:</p>
       <img v-if="this.windowWidth < 1000" src="@/assets/attributes_excel_sm.png" alt="attributes"/>
       <img v-else src="@/assets/attributes_excel.png" alt="attributes"/>
     </div>

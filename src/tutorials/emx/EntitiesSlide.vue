@@ -3,7 +3,7 @@
     <div v-if="step === 1">
       <div class="row">
         <div class="col-md-5">
-          <p>An entities sheet in Excel looks like this:</p>
+          <p>An entities sheet in Excel will look like this:</p>
           <img class="mg-entities" src="@/assets/entities_excel.png" alt="entities"/>
         </div>
         <div class="col-md-7">
