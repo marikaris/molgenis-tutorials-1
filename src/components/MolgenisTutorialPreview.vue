@@ -1,5 +1,5 @@
 <template>
-  <div class="row" @mouseenter="setHover" @mouseleave="setHover">
+  <div class="row" @mouseenter="atMouseEnter" @mouseleave="atMouseLeave">
     <div v-for="(tutorial, index) in tutorials" :key="index"
          :class="isStacked ? 'col-md-4' : 'col-md-12'"
          class="mg-tutorial">
@@ -36,19 +36,36 @@ export default {
   data: function () {
     return {
       isVisible: false,
-      isStacked: true
+      isStacked: true,
+      inFocus: false
     }
   },
   methods: {
     click (evt) {
       evt.stopPropagation()
     },
-    setStacked () {
+    toggleStacked () {
       this.isStacked = !this.isStacked
     },
-    setHover () {
-      this.isVisible = !this.isVisible
-      this.isStacked ? this.setStacked() : setTimeout(this.setStacked, 500)
+    showDescription () {
+      if (this.inFocus) {
+        this.isVisible = true
+        this.toggleStacked()
+      }
+    },
+    hideDescription () {
+      if (!this.inFocus) {
+        this.isVisible = false
+        setTimeout(this.toggleStacked, 500)
+      }
+    },
+    atMouseEnter () {
+      this.inFocus = true
+      setTimeout(this.showDescription, 500)
+    },
+    atMouseLeave () {
+      this.inFocus = false
+      setTimeout(this.hideDescription, 1000)
     }
   }
 }
