@@ -18,7 +18,8 @@
         </div>
       </div>
       <transition name="fade">
-        <div class="mg-description d-none d-md-block d-xl-block col-md-9" v-if="isVisible">
+        <div class="mg-description d-none d-md-block d-xl-block col-md-9" v-if="isVisible"
+             :class="{isStacked: 'mg-stacked'}">
           <h4>{{tutorial.infos.title}}</h4>
           <p>
             {{tutorial.infos.description}}
@@ -40,38 +41,49 @@ export default {
       inFocus: false
     }
   },
+  watch: {
+    inFocus: function () {
+      if (this.inFocus) {
+        setTimeout(this.showDescription, 500)
+      } else {
+        setTimeout(this.hideDescription, 1000)
+      }
+    }
+  },
   methods: {
     click (evt) {
       evt.stopPropagation()
     },
-    toggleStacked () {
-      this.isStacked = !this.isStacked
+    setStackedTrue () {
+      this.isStacked = true
     },
     showDescription () {
       if (this.inFocus) {
         this.isVisible = true
-        this.toggleStacked()
+        this.isStacked = false
       }
     },
     hideDescription () {
       if (!this.inFocus) {
         this.isVisible = false
-        setTimeout(this.toggleStacked, 500)
+        setTimeout(this.setStackedTrue, 500)
       }
     },
     atMouseEnter () {
       this.inFocus = true
-      setTimeout(this.showDescription, 500)
     },
     atMouseLeave () {
       this.inFocus = false
-      setTimeout(this.hideDescription, 1000)
     }
   }
 }
 </script>
 
 <style lang='scss' scoped>
+  .mg-stacked {
+    display: none;
+  }
+
   .mg-description {
     background-color: rgba(53, 53, 53, 0.9);
     color: white;
