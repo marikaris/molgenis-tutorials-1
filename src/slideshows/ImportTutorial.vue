@@ -27,7 +27,7 @@ export default {
   infos: {
     // These infos appear on the home page, below the slideshow's thumbnail
     title: 'Import table',
-    description: 'How to import your table into MOLGENIS',
+    description: 'How to import your table into MOLGENIS.',
     // Path in the URL, NO SPACES
     path: 'import'
   },
