@@ -4,6 +4,7 @@ import Home from '@/views/Home.vue'
 import EmxTutorial from '@/slideshows/EmxTutorial.vue'
 import ImportTutorial from '@/slideshows/ImportTutorial.vue'
 import FaqTutorial from '@/slideshows/FaqTutorial.vue'
+import PluginsTutorial from '@/slideshows/PluginsTutorial.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes: Array<RouteConfig> = [
     path: '/faq',
     name: 'FAQ',
     component: FaqTutorial
+  },
+  {
+    path: '/plugins',
+    name: 'MOLGENIS Plugins',
+    component: PluginsTutorial
   }
 ]
 
