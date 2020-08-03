@@ -5,11 +5,14 @@
       To illustrate the level of skill that is required for the usage of a certain plugin we will classify the plugins
       into three categories:
     </p>
-    <ul>
-      <li><font-awesome-icon icon="star"/> Usage possible for every user</li>
-      <li><font-awesome-icon icon="star"/> <font-awesome-icon icon="star"/> Usage possible for users with limited technical knowledge</li>
-      <li><font-awesome-icon icon="star"/> <font-awesome-icon icon="star"/> <font-awesome-icon icon="star"/> Usage possible for advanced users with programming skills</li>
-    </ul>
+    <div class="row">
+      <div class="col-2"><p><font-awesome-icon icon="star"/></p></div>
+      <div class="col-10"><p>Usage possible for every user</p></div>
+      <div class="col-2"><p><font-awesome-icon icon="star"/> <font-awesome-icon icon="star"/></p></div>
+      <div class="col-10"><p>Usage possible for users with limited technical knowledge</p></div>
+      <div class="col-2"><p><font-awesome-icon icon="star"/> <font-awesome-icon icon="star"/> <font-awesome-icon icon="star"/></p></div>
+      <div class="col-10"><p>Usage possible for advanced users with programming skills</p></div>
+    </div>
     <!-- Leave this last div!-->
   </div>
 </template>
