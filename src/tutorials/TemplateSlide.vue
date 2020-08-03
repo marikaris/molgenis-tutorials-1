@@ -34,7 +34,7 @@ import MolgenisTable from '@/components/MolgenisTable'
 import MolgenisImg from '@/components/MolgenisImg'
 
 export default {
-  // Here you fill in the name of your slide (use CamelCase like in this example)
+  // Here you fill in the name of your slide (use kebab-case like in the example)
   name: 'name-of-slide',
   // Register the table component if you use it in your slide
   components: { MolgenisTable, MolgenisImg },

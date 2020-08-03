@@ -10,7 +10,7 @@ import 'animate.css'
 import tutorials from '@/slideshows/tutorials.ts'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faDownload, faChevronLeft, faChevronRight, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faDownload, faChevronLeft, faChevronRight, faHome, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* eslint-disable no-new */
@@ -22,7 +22,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './style/molgenis_blue.css'
 
 // Add icons
-library.add(faDownload, faChevronLeft, faChevronRight, faHome)
+library.add(faDownload, faChevronLeft, faChevronRight, faHome, faStar)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false

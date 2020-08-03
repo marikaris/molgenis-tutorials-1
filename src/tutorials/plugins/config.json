@@ -4,6 +4,15 @@
       "name": "first-slide",
       "title": "MOLGENIS Plugins",
       "isFirst": true
+    },
+    {
+      "name": "difficulty-slide",
+      "title": "Plugin usage difficulty"
+    },
+    {
+      "name": "end-slide",
+      "title": "Summary",
+      "isLast": true
     }
   ]
 }
