@@ -39,6 +39,9 @@ Add your slide to the config. Open the ```config.json``` you just pasted in your
 The ```isFirst: true``` option will invert the colours of the slide, the background will be blue and its characters will
 be white. The default is ```false``` and therefore the ```isFirst``` can be left out when default behaviour is desired.  
 
+For the last slide there is an option as well, conveniently called ```isLast```. For this option the default is 
+```false``` as well. It will replace the ```next``` button with the ```home``` button on the slide marked as last. 
+
 For each slide you also need to specify the number of steps it has. The default is one and if you just have one step in 
 your slide, you can leave the ```step``` parameter out for your slide.
 

@@ -58,9 +58,10 @@
     "extends": [
       "plugin:vue/essential",
       "@vue/standard",
-      "@vue/typescript/recommended"
+      "@vue/typescript"
     ],
     "parserOptions": {
+      "parser": "@typescript-eslint/parser",
       "ecmaVersion": 2020
     },
     "rules": {},
