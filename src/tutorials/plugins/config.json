@@ -7,7 +7,11 @@
     },
     {
       "name": "difficulty-slide",
-      "title": "Plugin usage difficulty"
+      "title": "Plugin difficulty"
+    },
+    {
+      "name": "importer-slide",
+      "title": "Advanced importer"
     },
     {
       "name": "end-slide",
