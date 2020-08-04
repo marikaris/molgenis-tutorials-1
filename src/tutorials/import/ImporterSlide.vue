@@ -1,7 +1,8 @@
 <template>
   <div>
     <div v-if="step === 1">
-      <p>Open the <code>Advanced importer</code> by clicking it in the menu.</p>
+      <p>Open the <code>Advanced importer</code> by clicking it in the menu. Using the default MOLGENIS layout, you can
+      find it here: </p>
       <img v-if="this.windowWidth > 989" class="mg-menu" src="@/assets/importer_menu.png" alt="menu"/>
       <img v-if="this.windowWidth < 990" class="mg-menu-sm" src="@/assets/importer_menu_small.png" alt="menu"/>
     </div>
