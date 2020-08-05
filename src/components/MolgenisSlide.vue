@@ -110,7 +110,6 @@ export default {
     text-align: left;
   }
   .embedded-slideshow-container .mg-slide-logo {
-    max-height: 2%;
     margin-right: 70%;
   }
 

@@ -3,7 +3,6 @@
   <div>
     <!-- Remove the step divs if you have one step-->
     <div v-if="step === 1">
-      <!-- Content for first step -->
       <p>
         Creating your own table in MOLGENIS can be complex, especially when you are just getting started. We will
         attempt to cover all common mistakes and show how to fix them.
@@ -14,27 +13,20 @@
       <p>It happens to everyone, you forgot to specify the id attribute of your table. You will receive this error in
         the <code>options</code> section:</p>
       <img src="@/assets/missing_id.png" alt="Error missing id"/>
+      <hr />
       <div class="row">
-        <div class="col-md-7 col-sm-5">
-          <p>This is fixed easily: choose
-            which column will be best suited as the id for your table and set the column <code>idAttribute</code> in your
-            <code>attributes</code> sheet to <code>TRUE</code>.</p>
-        </div>
-        <div class="col-md-5 col-sm-7">
-          <molgenis-table title="Attributes"
+        <div class="col-lg-6 col-md-12">
+          <molgenis-table
+            title="The fix is easy. choose which column will be best suited as the id for your table and set the
+            idAttribute column in your attributes sheet to TRUE."
                           :header="['name', 'label', 'entity', 'idAttribute']"
                           :data="[['id', 'ID', 'demo_table', 'TRUE'],
                           ['label', 'Label', 'demo_table', ''],
                           ['something', 'Something else', 'demo_table', '']]"/>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-7 col-sm-5">
-          <p>If you don't have a suitable column, you can add an additional column and let MOLGENIS automatically
-            generate the id's for you.</p>
-        </div>
-        <div class="col-md-5 col-sm-7">
-          <molgenis-table title="Attributes"
+        <div class="col-lg-6 offset-md-2 offset-lg-0">
+          <molgenis-table title="If you don't have a suitable column, you can add an additional column and let MOLGENIS
+          automatically generate the id's for you."
                           :header="['name', 'label', 'entity', 'idAttribute', 'auto']"
                           :data="[['id', 'ID', 'demo_table', 'TRUE', 'TRUE'],
                           ['label', 'Label', 'demo_table', '', ''],
@@ -43,19 +35,23 @@
       </div>
     </div>
     <div v-if="step === 3">
-      <h3>Set id attribute to invisible, but forgot to set label attribute</h3>
+      <h3>Forgot to set label attribute with invisible idAttribute</h3>
       <p>In a lot of cases, you probably want to hide the id column of your table from your users. This means you set
         the <code>visible</code> column in your attributes sheet to <code>FALSE</code>. When doing this, the label
         attribute becomes mandatory. If you don't set it, you will receive the following error in the
         <code>options</code> section:</p>
       <img src="@/assets/missing_label.png" alt="Error missing label"/>
-      <p>The fix is easy: find a column that you want to represent the values in your table and set it as label
-        attribute:</p>
-      <molgenis-table title="Attributes"
-                      :header="['name', 'label', 'entity', 'idAttribute', 'visible', 'labelAttribute']"
-                      :data="[['id', 'ID', 'demo_table', 'TRUE', 'FALSE', ''],
+      <hr/>
+      <div class="row">
+        <div class="col-lg-10 col-xl-12 offset-lg-2 offset-xl-0">
+          <molgenis-table title="The fix is easy: find a column that you want to represent the values in your table and set
+      it as label attribute in your attributes sheet."
+                          :header="['name', 'label', 'entity', 'idAttribute', 'visible', 'labelAttribute']"
+                          :data="[['id', 'ID', 'demo_table', 'TRUE', 'FALSE', ''],
                           ['label', 'Label', 'demo_table', '', '', 'TRUE'],
                           ['something', 'Something else', 'demo_table', '', '', '']]"/>
+        </div>
+      </div>
     </div>
     <div v-if="step > 3 && step < 7">
       <h3>Fully qualified name</h3>

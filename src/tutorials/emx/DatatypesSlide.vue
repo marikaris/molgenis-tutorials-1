@@ -2,7 +2,9 @@
   <div>
     <div v-if="step === 1">
       <p>For each attribute you can specify its data type.</p>
-      <molgenis-table
+      <div class="row">
+        <div class="offset-lg-1">
+          <molgenis-table
         title="DataTypes"
         :header="['Data Type', 'Description']"
         :data="[
@@ -28,6 +30,8 @@
                ['one_to_many', 'Relation between two columns in possibly different datasets'],
                ['text', 'Text of possibly more than 255 characters']
                ]"/>
+        </div>
+      </div>
     </div>
     <div v-if="step === 2">
       <div class="row">
@@ -54,7 +58,7 @@
       </div>
     </div>
     <div class="row" v-if="step > 2 && step < 6">
-      <div class="col-9">
+      <div class="col-md-9 col-lg-8">
         <p v-if="step > 2 && step < 6">
           First we determine the data types of the subjects table.
         </p>
@@ -66,18 +70,24 @@
                         :header="['id', 'sex', 'age', 'weight', 'height', 'drug']"
                         v-if="step > 2 && step < 6"/>
       </div>
-      <div class="col-3">
+      <div class="col-md-3 col-lg-4">
         <div v-if='step === 4'>
           <p>For the categoricals we need to add reference tables: </p>
           <molgenis-table title="sex" :header="['id', 'label']" :data="[['f', 'Female'], ['m', 'Male']]"/>
         </div>
         <div v-if='step === 5'>
-          <p>And: </p>
-          <molgenis-table title="drugs" :header="['id', 'label']" :data="[
+          <div class="row">
+            <div class="col-sm-3 col-md-12">
+              <p>And: </p>
+            </div>
+            <div class="col-sm-9 col-md-12">
+              <molgenis-table title="drugs" :header="['id', 'label']" :data="[
                 ['asp','Aspirine'], ['celecoxib', 'Celecoxib'],['diclo', 'Diclofenac'],['diflu', 'Diflunisal'],
                 ['etodo', 'Etodolac'], ['ibu', 'Ibuprofen'], ['indomet', 'Indomethacin'], ['ketopro', 'Ketoprofen'],
                 ['ketoro', 'Ketorolac'], ['nabu', 'Nabumetone'], ['napro', 'Naproxen'], ['oxa', 'Oxaprozin'],
                 ['piro', 'Piroxicam'], ['salsa', 'Salsalate'], ['sulin', 'Sulindac'],['tol', 'Tolmetin']]"/>
+            </div>
+          </div>
         </div>
       </div>
     </div>

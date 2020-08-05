@@ -8,12 +8,12 @@
         </div>
         <div class="col-md-7">
           <p>In CSV this would be:</p>
-          <pre>"name","label","package","description"
+          <pre><code>"name","label","package","description"
 "subjects","Subjects","study",""
 "samples","Samples","study",""
 "sex","Sex","study",""
 "drugs","Drugs","study",""
-"diseases","Diseases","study","ICD10 Diseases"</pre>
+"diseases","Diseases","study","ICD10 Diseases"</code></pre>
           <p>In TSV: the same as CSV, but with tabs instead of commas.</p>
         </div>
       </div>
