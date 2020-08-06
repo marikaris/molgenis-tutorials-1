@@ -1,11 +1,18 @@
 <template>
   <div>
     <div v-if="step=== 1">
-      <p>Let's take a look at the <code>attributes</code> sheet that defines these tables.</p>
-      <molgenis-table title="attributes"
-                      :header="['name', 'label', 'entity', 'idAttribute', 'labelAttribute', 'dataType', 'refEntity',
+      <div class="row">
+        <div class="col">
+          <p>Let's take a look at the <code>attributes</code> sheet that defines these tables.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <molgenis-table title="attributes"
+                          v-if="windowWidth > 600"
+                          :header="['name', 'label', 'entity', 'idAttribute', 'labelAttribute', 'dataType', 'refEntity',
                             'mappedBy', 'visible', 'nillable', 'description']"
-                      :data="[
+                          :data="[
                                 ['id', 'ID', 'study_subjects', 'TRUE', 'TRUE', 'int', '', '', '', 'FALSE', ''],
                                 ['age', 'Age', 'study_subjects', '', '', 'int', '', '', '', 'FALSE', ''],
                                 ['sex', 'Sex', 'study_subjects', '', '', 'categorical', 'study_sex', '', '', 'FALSE', ''],
@@ -22,6 +29,48 @@
                                 ['time', 'Time (h)', 'study_samples', '', 'TRUE', 'decimal', '', '', '', 'FALSE', 'Times at which blood samples were drawn (hr)'],
                                 ['conc', 'Concentration (mcg/ml)', 'study_samples', '', 'TRUE', 'decimal', '', '', '', 'FALSE', 'Plasma concentrations drug (mcg/ml)']
                                 ]"/>
+          <molgenis-table title="attributes (part 1)"
+                          v-if="windowWidth < 601"
+                          :header="['name', 'label', 'entity', 'idAttribute', 'labelAttribute']"
+                          :data="[
+                                ['id', 'ID', 'study_subjects', 'TRUE', 'TRUE'],
+                                ['age', 'Age', 'study_subjects', '', ''],
+                                ['sex', 'Sex', 'study_subjects', '', ''],
+                                ['weight', 'Weight', 'study_subjects', '', ''],
+                                ['height', 'Height', 'study_subjects', '', ''],
+                                ['drug', 'Drug', 'study_subjects', '', ''],
+                                ['samples', 'Samples', 'study_subjects', '', ''],
+                                ['id', 'ID', 'study_sex', 'TRUE', ''],
+                                ['label', 'Label', 'study_sex', '', 'TRUE'],
+                                ['id', 'ID', 'study_drugs', 'TRUE', ''],
+                                ['label', 'Label', 'study_drugs', '', 'TRUE'],
+                                ['id', 'ID', 'study_samples', 'TRUE', ''],
+                                ['subject', 'Subject', 'study_samples', '', ''],
+                                ['time', 'Time (h)', 'study_samples', '', 'TRUE'],
+                                ['conc', 'Concentration (mcg/ml)', 'study_samples', '', 'TRUE']
+                                ]"/>
+          <molgenis-table title="attributes (part 2)"
+                          v-if="windowWidth < 600"
+                          :header="['dataType', 'refEntity', 'mappedBy', 'visible', 'nillable', 'description']"
+                          :data="[
+                                ['int', '', '', '', 'FALSE', ''],
+                                ['int', '', '', '', 'FALSE', ''],
+                                ['categorical', 'study_sex', '', '', 'FALSE', ''],
+                                ['int', '', '', '', 'FALSE', ''],
+                                ['int', '', '', '', 'FALSE', ''],
+                                ['categorical', 'study_drugs', '', '', 'FALSE', ''],
+                                ['on_to_many', 'study_samples', 'subject', '', 'FALSE', ''],
+                                ['string', '', '', '', 'FALSE', ''],
+                                ['string', '', '', '', 'FALSE', ''],
+                                ['string', '', '', '', 'FALSE', ''],
+                                ['string', '', '', '', 'FALSE', ''],
+                                ['string', '', '', 'FALSE', 'FALSE', ''],
+                                ['xref', 'study_subjects', '', '', 'FALSE', ''],
+                                ['decimal', '', '', '', 'FALSE', 'Times at which blood samples were drawn (hr)'],
+                                ['decimal', '', '', '', 'FALSE', 'Plasma concentrations drug (mcg/ml)']
+                                ]"/>
+        </div>
+      </div>
     </div>
     <div v-else-if="step===2">
       <p>These are the most important attribute sheet columns explained:</p>
@@ -62,6 +111,25 @@ import MolgenisTable from '@/components/MolgenisTable'
 export default {
   name: 'create-table-slide',
   components: { MolgenisTable },
-  props: { step: Number }
+  props: { step: Number },
+  data () {
+    return {
+      windowWidth: 0
+    }
+  },
+  methods: {
+    onResize () {
+      this.windowWidth = window.innerWidth
+    }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this.windowWidth = window.innerWidth
+      window.addEventListener('resize', this.onResize)
+    })
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResize)
+  }
 }
 </script>

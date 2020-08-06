@@ -3,29 +3,31 @@
     <div v-for="(tutorial, index) in tutorials" :key="index"
          :class="isStacked ? 'col-md-4' : 'col-md-12'"
          class="mg-tutorial">
-      <div class="box-card" :class="isStacked ? 'col-md-12' : 'col-md-3'">
-        <router-link :to="tutorial.infos.path" @click.native="click">
-          <div class="embedded-slideshow-container">
-            <component :is="tutorial" :embedded=true :keyboardNavigation="false"
-                       :mouseNavigation="false"/>
+      <div class="row">
+        <div class="box-card" :class="isStacked ? 'col-md-12' : 'col-md-3'">
+          <router-link :to="tutorial.infos.path" @click.native="click">
+            <div class="embedded-slideshow-container">
+              <component :is="tutorial" :embedded=true :keyboardNavigation="false"
+                         :mouseNavigation="false"/>
+            </div>
+          </router-link>
+          <div class="mg-caption">
+            <p class="font-weight-bold">{{tutorial.infos.title}}</p>
+            <p class="thumbnail-description d-md-none d-lg-none d-xl-none">
+              {{tutorial.infos.description}}
+            </p>
           </div>
-        </router-link>
-        <div class="mg-caption">
-          <p class="font-weight-bold">{{tutorial.infos.title}}</p>
-          <p class="thumbnail-description d-md-none d-lg-none d-xl-none">
-            {{tutorial.infos.description}}
-          </p>
         </div>
+        <transition name="fade">
+          <div class="mg-description d-none d-md-block d-xl-block col-md-9" v-if="isVisible"
+               :class="{isStacked: 'mg-stacked'}">
+            <h4>{{tutorial.infos.title}}</h4>
+            <p>
+              {{tutorial.infos.description}}
+            </p>
+          </div>
+        </transition>
       </div>
-      <transition name="fade">
-        <div class="mg-description d-none d-md-block d-xl-block col-md-9" v-if="isVisible"
-             :class="{isStacked: 'mg-stacked'}">
-          <h4>{{tutorial.infos.title}}</h4>
-          <p>
-            {{tutorial.infos.description}}
-          </p>
-        </div>
-      </transition>
     </div>
   </div>
 </template>
@@ -86,6 +88,9 @@ export default {
 
   .mg-description {
     background-color: rgba(53, 53, 53, 0.9);
+    padding: 1.5rem;
+    height: 100%;
+    margin-bottom: 1rem;
     color: white;
   }
 

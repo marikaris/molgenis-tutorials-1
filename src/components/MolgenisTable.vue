@@ -51,10 +51,10 @@ export default {
       return !this.needsMinPadding && (this.headerLength === 10 || isBetween(this.dataLength, 7, 14))
     },
     needsMidFont () {
-      return !(this.needsSmallFont || this.needsXsFont) && (isBetween(this.headerLength, 7, 12) || isBetween(this.dataLength, 10, 14) || isBelow(this.tableWidth, 675))
+      return !(this.needsSmallFont || this.needsXsFont) && (isBetween(this.headerLength, 7, 12) || isBetween(this.dataLength, 10, 14) || isBelow(this.tableWidth, 800))
     },
     needsMinPadding () {
-      return isAbove(this.headerLength, 10) || isAbove(this.dataLength, 12) || isBelow(this.tableWidth, 550)
+      return isAbove(this.headerLength, 10) || isAbove(this.dataLength, 12) || isBelow(this.tableWidth, 725)
     },
     needsSmallFont () {
       return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.tableWidth, 475))
@@ -69,7 +69,6 @@ export default {
       window.addEventListener('resize', this.onResize)
     })
   },
-
   beforeDestroy () {
     window.removeEventListener('resize', this.onResize)
   }
@@ -107,8 +106,11 @@ export default {
   .mg-min-padding > caption {
     padding: 0;
   }
+  table > tbody > tr > td {
+    padding: 0.5rem;
+  }
   .mg-min-padding > tbody > tr > td,
   .mg-min-padding > thead > tr > th {
-    padding: 0.1rem;
+    padding: 0.01rem;
   }
 </style>
