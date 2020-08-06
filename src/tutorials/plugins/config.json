@@ -14,6 +14,10 @@
       "title": "Advanced importer"
     },
     {
+      "name": "quick-importer-slide",
+      "title": "Quick importer"
+    },
+    {
       "name": "end-slide",
       "title": "Summary",
       "isLast": true
