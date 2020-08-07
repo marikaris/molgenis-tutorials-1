@@ -46,7 +46,7 @@ export default {
   watch: {
     inFocus: function () {
       if (this.inFocus) {
-        setTimeout(this.showDescription, 500)
+        setTimeout(this.showDescription, 300)
       } else {
         setTimeout(this.hideDescription, 1000)
       }
@@ -68,7 +68,7 @@ export default {
     hideDescription () {
       if (!this.inFocus) {
         this.isVisible = false
-        setTimeout(this.setStackedTrue, 500)
+        setTimeout(this.setStackedTrue, 300)
       }
     },
     atMouseEnter () {
