@@ -18,6 +18,14 @@
       "title": "Quick importer"
     },
     {
+      "name": "navigator-slide",
+      "title": "Navigator"
+    },
+    {
+      "name": "dataexplorer-slide",
+      "title": "Dataexplorer"
+    },
+    {
       "name": "end-slide",
       "title": "Summary",
       "isLast": true

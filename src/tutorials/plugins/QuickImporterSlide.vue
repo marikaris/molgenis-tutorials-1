@@ -2,14 +2,14 @@
   <div>
     <div>
       <div class="row">
-        <div class="col-lg-5 col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12">
           <p>
             The quick importer was created to make MOLGENIS more accessible for users with less technical knowledge.
             Simple tables (Excel/CSV/TSV) can be uploaded by just selecting the correct file. MOLGENIS will create a
             table from it.
           </p>
         </div>
-        <div class="col-lg-7 col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12">
           <img src="@/assets/quick_importer.png" alt="Upload file" class="mg-import"/>
         </div>
       </div>
@@ -22,7 +22,7 @@
 import MolgenisDifficultyFooter from '@/components/MolgenisDifficultyFooter'
 
 export default {
-  name: 'importer-slide',
+  name: 'quick-importer-slide',
   props: { step: Number },
   components: { MolgenisDifficultyFooter }
 }
