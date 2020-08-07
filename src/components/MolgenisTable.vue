@@ -51,13 +51,13 @@ export default {
       return !this.needsMinPadding && (this.headerLength === 10 || isBetween(this.dataLength, 7, 14))
     },
     needsMidFont () {
-      return !(this.needsSmallFont || this.needsXsFont) && (isBetween(this.headerLength, 7, 12) || isBetween(this.dataLength, 10, 14) || isBelow(this.tableWidth, 800))
+      return !(this.needsSmallFont || this.needsXsFont) && (isBetween(this.headerLength, 7, 12) || isBetween(this.dataLength, 10, 14) || isBelow(this.tableWidth, 830))
     },
     needsMinPadding () {
       return isAbove(this.headerLength, 10) || isAbove(this.dataLength, 12) || isBelow(this.tableWidth, 725)
     },
     needsSmallFont () {
-      return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.tableWidth, 475))
+      return !this.needsXsFont && (isAbove(this.headerLength, 10) || isAbove(this.dataLength, 13) || isBelow(this.tableWidth, 460))
     },
     needsXsFont () {
       return isAbove(this.headerLength, 13) || isAbove(this.dataLength, 22) || (isAbove(this.headerLength, 10) && isBelow(this.tableWidth, 500))
@@ -111,6 +111,6 @@ export default {
   }
   .mg-min-padding > tbody > tr > td,
   .mg-min-padding > thead > tr > th {
-    padding: 0.01rem;
+    padding: 0.05rem;
   }
 </style>

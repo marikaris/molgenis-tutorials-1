@@ -19,19 +19,21 @@
     </div>
     <div v-if="step === 3 || step === 4">
       <div class="row">
-        <div class="col-md-5 col-sm-6">
-          <img v-if="this.windowWidth > 575" src="@/assets/import_options.png" alt="Options" class="import-options"/>
+        <div class="col-lg-5 col-sm-6" v-if="this.windowWidth > 575">
+          <img src="@/assets/import_options.png" alt="Options" class="import-options"/>
         </div>
-        <div class="col-md-7 col-sm-6" v-if="step=== 3">
+        <div class="col-lg-7 col-sm-6" v-if="step=== 3">
           <img v-if="this.windowWidth < 576 " src="@/assets/import_md_options.png" alt="Options"/>
+          <hr/>
           <h4>Step 2 Metadata options</h4>
           <p> Select <code>Create new metadata</code> (make a new table given the EMX you are uploading).</p>
           <p><code>Ignore the metadata</code> will ignore the model you specify and upload the data if the table
             exists. If the table doesn't exist, the upload will fail. MOLGENIS will still validate the metadata if you
             provide it, so your upload might still fail if you provide incorrect metadata.</p>
         </div>
-        <div class="col-md-7 col-sm-6" v-if="step=== 4">
+        <div class="col-lg-7 col-sm-6" v-if="step=== 4">
           <img v-if="this.windowWidth < 576" src="@/assets/import_data_options.png" alt="Options"/>
+          <hr/>
           <h4>Step 3 Data options</h4>
           <p>
             Select <code>Add entities</code> (this only adds rows to the table and fails if you try to update rows)
@@ -144,7 +146,7 @@ export default {
 
   img.import-options {
     max-width: 100%;
-    width: 35rem;
+    width: 25rem;
   }
 
   img.import-validation {

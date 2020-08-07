@@ -42,7 +42,7 @@
         all
         your data. An example:</p>
       <div class="row">
-        <div class="col-sm-5">
+        <div class="col-lg-3 col-sm-5">
           <molgenis-table title="Attributes"
                           :header="['name', 'label', 'entity', 'idAttribute', 'dataType', 'refEntity']"
                           :data="[['id', 'ID', 'demo_example', 'TRUE', '', ''],
@@ -51,8 +51,8 @@
                           ['id', 'ID', 'demo_ref', 'TRUE', '', ''],
                           ['label', 'Label', 'demo_ref', '', '', '']]"/>
         </div>
-        <div class="col-sm-2"></div>
-        <div class="col-sm-5">
+        <div class="col-sm-4"></div>
+        <div class="col-lg-5 col-sm-5">
           <div class="row">
             <div class="col-12">
               <molgenis-table title="demo_ref" :header="['id', 'label']"
@@ -62,18 +62,15 @@
               <molgenis-table title="demo_example" :header="['id', 'label', 'ref']"
                               :data="[['id1', 'label 1', 'Ref1']]"/>
             </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p>When you upload this, you will get the following error:</p>
+                <molgenis-img title="The reference in demo_example should be lowercase: ref1">
+                  <img src="@/assets/ref_doesnt_exist.png" alt="error" class="mg-error"/>
+                </molgenis-img>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <hr/>
-      <div class="row">
-        <div class="col-md-7">
-          <p>When you upload this, you will get the following error:</p>
-        </div>
-        <div class="col-md-5">
-          <molgenis-img title="The reference in demo_example should be lowercase: ref1">
-            <img src="@/assets/ref_doesnt_exist.png" alt="error" class="mg-error"/>
-          </molgenis-img>
         </div>
       </div>
     </div>
